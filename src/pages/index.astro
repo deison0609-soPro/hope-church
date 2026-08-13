@@ -58,17 +58,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
 
         <!-- 右側圖片 -->
-        <div class="relative hidden md:block h-[90vh]">
-          <div class="absolute inset-0 bg-hope-green-light rounded-l-[4rem]"></div>
-          <img
-            src="/images/church-group.jpg"
-            alt="台中希望教會大家庭"
-            class="absolute inset-4 w-[calc(100%-2rem)] h-[calc(100%-2rem)] object-cover rounded-l-[3.5rem] shadow-2xl"
-          />
+        <div class="relative hidden md:flex items-center py-12">
+          <!-- 綠色背景塊 -->
+          <div class="absolute inset-y-0 left-8 right-0 bg-hope-green-light rounded-l-[3rem]"></div>
+          <!-- 圖片 -->
+          <div class="relative w-full ml-4 h-[75vh] rounded-l-[2.5rem] overflow-hidden shadow-2xl">
+            <img
+              src="/images/church-group.jpg"
+              alt="台中希望教會大家庭"
+              class="w-full h-full object-cover"
+            />
+          </div>
           <!-- 浮動標籤 -->
-          <div class="absolute bottom-12 -left-6 bg-white rounded-2xl shadow-xl px-5 py-4">
+          <div class="absolute bottom-16 left-2 bg-white rounded-2xl shadow-xl px-5 py-4 z-10">
             <div class="flex items-center gap-3">
-              <div class="w-10 h-10 bg-hope-green-light rounded-full flex items-center justify-center">
+              <div class="w-10 h-10 bg-hope-green-light rounded-full flex items-center justify-center flex-shrink-0">
                 <svg class="w-5 h-5 text-hope-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                 </svg>
@@ -101,7 +105,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </svg>
           </div>
           <h3 class="text-xl font-bold text-gray-900 mb-2">幸福小聚</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">用聖經智慧探索幸福婚姻與家庭，已婚、單身都歡迎</p>
+          <p class="text-gray-500 text-sm leading-relaxed">為還不認識信仰的新朋友而設，輕鬆聊聊，一起發現真正的幸福</p>
           <span class="mt-5 inline-flex items-center text-hope-green text-sm font-medium">
             了解更多
             <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

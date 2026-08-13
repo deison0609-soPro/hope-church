@@ -1,75 +1,119 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="幸福小聚" description="台中希望教會幸福小聚——用聖經智慧探索幸福婚姻與家庭">
+<BaseLayout title="幸福小聚" description="台中希望教會幸福小聚——為還不認識信仰的新朋友而設，一起發現真正的幸福">
 
-  <div class="bg-hope-green-light border-b border-green-100">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
-      <h1 class="text-3xl md:text-4xl font-bold text-gray-900">幸福小聚</h1>
-      <p class="mt-2 text-gray-600">探索幸福婚姻，建立美好家庭</p>
-    </div>
-  </div>
-
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-16 space-y-16">
-
-    <!-- 主題說明 -->
-    <section class="text-center">
-      <div class="inline-block bg-hope-green text-white text-sm font-medium px-4 py-1.5 rounded-full mb-6">
-        幸福就在這裡
+  <!-- Hero -->
+  <section class="bg-white overflow-hidden">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-20 text-center">
+      <div class="inline-flex items-center gap-2 bg-hope-green-light text-hope-green text-sm font-medium px-5 py-2 rounded-full mb-8">
+        <span>✨</span>
+        <span>為新朋友而設</span>
       </div>
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 leading-snug mb-6">
-        幸福是人人嚮往的，<br />婚姻是幸福的重要環節
-      </h2>
-      <p class="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
-        每個人都渴望幸福，婚姻是許多人生命中最重要的旅程。
-        幸福小聚以聖經的智慧為基礎，幫助你認識真實的愛與幸福，
-        無論是已婚、單身，都歡迎你來一起探索。
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 leading-snug mb-6">
+        讓我們為自己<br />
+        <span class="text-hope-green">翻轉人生</span>
+      </h1>
+      <p class="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
+        不同於以往的舊路！<br />
+        最重要的——明瞭並擁有「<span class="text-hope-green font-semibold">真正的幸福</span>」
       </p>
-    </section>
+    </div>
+  </section>
 
-    <!-- 聖經節 -->
-    <section class="bg-hope-green rounded-2xl p-10 text-center">
-      <p class="text-2xl font-medium text-white leading-relaxed">
-        「愛是恆久忍耐，又有恩慈；<br />
-        愛是不嫉妒；愛是不自誇，不張狂。」
-      </p>
-      <cite class="mt-4 block text-green-100 not-italic text-sm">哥林多前書 13：4</cite>
-    </section>
+  <!-- 邀請語 -->
+  <section class="bg-hope-green-light py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-2xl font-bold text-gray-900 mb-6">親愛的，<br />我們想告訴你</h2>
+          <div class="space-y-4 text-gray-700 leading-relaxed text-lg">
+            <p>上帝喜歡我們。</p>
+            <p>
+              無論你現在在哪個人生階段，不管你對信仰了不了解——
+              這裡都有你的位置。
+            </p>
+            <p>
+              幸福小聚是一個輕鬆溫馨的聚會，
+              為每一個還不認識這個信仰的新朋友而設。
+              我們不會要求你懂什麼，只邀請你——
+            </p>
+            <p class="text-hope-green font-semibold text-xl">一起坐下來，聊聊。</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl p-8 shadow-sm">
+          <p class="text-gray-500 text-sm mb-3">透過溫馨動人的交流，</p>
+          <div class="space-y-3 text-gray-800 leading-relaxed">
+            <p>我們一起分享「愛」與「幸福」</p>
+            <p>你會發現——</p>
+            <p class="text-hope-green font-medium text-lg">
+              原來這個豐盛恩典，<br />
+              就等我主動去領取。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- 課程內容 -->
-    <section>
-      <h2 class="text-2xl font-bold text-gray-900 mb-6">在幸福小聚，你將探索</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+  <!-- 聖經節 -->
+  <section class="py-20 bg-hope-green">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+      <div class="w-10 h-px bg-green-300 mx-auto mb-8"></div>
+      <blockquote class="text-2xl md:text-3xl font-medium text-white leading-relaxed">
+        「你無須害怕，因為我與你同在；<br />
+        不要驚惶，因為我是你的神。<br />
+        我必堅固你，我必幫助你；<br />
+        我必用我公義的右手扶持你。」
+      </blockquote>
+      <cite class="mt-6 block text-green-200 not-italic text-sm tracking-wide">以賽亞書 41：10</cite>
+      <div class="w-10 h-px bg-green-300 mx-auto mt-8"></div>
+    </div>
+  </section>
+
+  <!-- 這個聚會是給誰的 -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4">這個聚會是給誰的？</h2>
+      <p class="text-gray-500 mb-12">只要是還不認識這個信仰的你，都歡迎！</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         {[
-          { icon: '💡', title: '認識真實的愛', desc: '從聖經的角度重新定義愛，超越情感的起伏' },
-          { icon: '🤝', title: '學習溝通與理解', desc: '建立深度連結，讓婚姻關係更加緊密' },
-          { icon: '🌱', title: '共同成長', desc: '夫妻一起在信仰中成長，成為彼此最好的隊友' },
-          { icon: '🏠', title: '建立幸福家庭', desc: '從婚姻延伸到家庭，讓愛的影響力傳遞給下一代' },
+          { icon: '🌱', title: '對信仰好奇', desc: '聽過基督信仰，想多了解一點，但不知從哪開始' },
+          { icon: '💬', title: '想找人聊聊', desc: '生活中有些事想說、想問，需要一個安全的空間' },
+          { icon: '✨', title: '想要改變', desc: '感覺人生需要一點不一樣，想嘗試新的可能' },
         ].map((item) => (
-          <div class="flex items-start gap-4 p-5 bg-gray-50 rounded-xl">
-            <span class="text-2xl flex-shrink-0">{item.icon}</span>
-            <div>
-              <h3 class="font-bold text-gray-900 mb-1">{item.title}</h3>
-              <p class="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
-            </div>
+          <div class="p-6 bg-gray-50 rounded-2xl hover:shadow-md transition-shadow">
+            <div class="text-3xl mb-4">{item.icon}</div>
+            <h3 class="font-bold text-gray-900 mb-2">{item.title}</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
           </div>
         ))}
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- CTA -->
-    <section class="text-center bg-gray-50 rounded-2xl p-10">
-      <h2 class="text-2xl font-bold text-gray-900 mb-3">歡迎你來參加</h2>
-      <p class="text-gray-600 mb-8">不管你是已婚、交往中，或還在等待的單身，這裡都有你的位置</p>
+  <!-- CTA -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-xl mx-auto px-4 sm:px-6 text-center">
+      <h2 class="text-2xl font-bold text-gray-900 mb-3">準備好了嗎？</h2>
+      <p class="text-gray-600 mb-8 leading-relaxed">
+        你不需要任何準備，只要帶著一顆開放的心。<br />
+        我們在這裡等你。
+      </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/contact" class="px-8 py-3 bg-hope-green text-white font-semibold rounded-full hover:bg-hope-green-dark transition-colors">
-          聯絡我們
+        <a href="/contact"
+          class="px-10 py-4 bg-hope-green text-white font-semibold rounded-full hover:bg-hope-green-dark transition-colors shadow-lg shadow-green-200 text-center">
+          預約幸福聚會
         </a>
-        <a href="/pastor/groups" class="px-8 py-3 border-2 border-hope-green text-hope-green font-semibold rounded-full hover:bg-hope-green-light transition-colors">
+        <a href="/pastor/groups"
+          class="px-10 py-4 border-2 border-hope-green text-hope-green font-semibold rounded-full hover:bg-hope-green-light transition-colors text-center">
           加入小組
         </a>
       </div>
-    </section>
+      <p class="mt-8 text-sm text-gray-400">
+        任何疑問可先來電：<a href="tel:0422651572" class="text-hope-green hover:underline">(04) 2265-1572</a>
+      </p>
+    </div>
+  </section>
 
-  </div>
 </BaseLayout>
