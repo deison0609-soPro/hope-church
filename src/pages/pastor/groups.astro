@@ -104,14 +104,57 @@ const groups = [
         <p class="text-gray-600">歡迎留下資料，期待更多認識您！</p>
       </div>
 
-      <!-- Google Form 嵌入區 -->
-      <div class="bg-white border-2 border-dashed border-gray-200 rounded-xl p-8 text-center text-gray-400">
-        <svg class="w-10 h-10 mx-auto mb-3 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-        </svg>
-        <p class="text-sm">Google 報名表單嵌入位置</p>
-        <p class="text-xs mt-1">（將 Google Form iframe 貼到這裡）</p>
-      </div>
+      <form
+        action="https://formspree.io/f/meajkbbq"
+        method="POST"
+        class="space-y-4"
+      >
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">您的大名 <span class="text-red-500">*</span></label>
+          <input type="text" name="姓名" required
+            class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-hope-green focus:border-transparent transition" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">聯絡電話 <span class="text-red-500">*</span></label>
+          <input type="tel" name="電話" required
+            class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-hope-green focus:border-transparent transition" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">電子郵件 <span class="text-red-500">*</span></label>
+          <input type="email" name="email" required
+            class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-hope-green focus:border-transparent transition" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">現居地址</label>
+          <input type="text" name="地址"
+            class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-hope-green focus:border-transparent transition" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">想加入的小組</label>
+          <select name="小組" class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-hope-green focus:border-transparent transition bg-white">
+            <option value="">請選擇</option>
+            <option value="柯哥小組">柯哥小組（週四 19:30）</option>
+            <option value="德松小組">德松小組（週五 20:00）</option>
+            <option value="政億小組">政億小組（週日 12:30）</option>
+            <option value="士倚小組">士倚小組（週四 19:40）</option>
+            <option value="聖閔小組">聖閔小組（週五 19:40）</option>
+            <option value="主豪小組">主豪小組（週二 19:40）</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">適合聯絡的時間</label>
+          <select name="聯絡時間" class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-hope-green focus:border-transparent transition bg-white">
+            <option value="">請選擇</option>
+            <option value="平日白天">平日白天</option>
+            <option value="平日晚上">平日晚上</option>
+            <option value="週末">週末</option>
+          </select>
+        </div>
+        <button type="submit"
+          class="w-full py-3 bg-hope-green text-white font-semibold rounded-lg hover:bg-hope-green-dark transition-colors">
+          送出報名
+        </button>
+      </form>
 
       <div class="mt-8 pt-6 border-t border-gray-200 text-center space-y-1 text-sm text-gray-600">
         <p>幸福專線：<a href="tel:0422651572" class="text-hope-green">(04) 2265-1572</a></p>
