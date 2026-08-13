@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="幸福小聚" description="台中希望教會幸福小聚——用聖經智慧探索幸福婚姻與家庭">
+
+  <div class="bg-hope-green-light border-b border-green-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900">幸福小聚</h1>
+      <p class="mt-2 text-gray-600">探索幸福婚姻，建立美好家庭</p>
+    </div>
+  </div>
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-16 space-y-16">
+
+    <!-- 主題說明 -->
+    <section class="text-center">
+      <div class="inline-block bg-hope-green text-white text-sm font-medium px-4 py-1.5 rounded-full mb-6">
+        幸福就在這裡
+      </div>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 leading-snug mb-6">
+        幸福是人人嚮往的，<br />婚姻是幸福的重要環節
+      </h2>
+      <p class="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
+        每個人都渴望幸福，婚姻是許多人生命中最重要的旅程。
+        幸福小聚以聖經的智慧為基礎，幫助你認識真實的愛與幸福，
+        無論是已婚、單身，都歡迎你來一起探索。
+      </p>
+    </section>
+
+    <!-- 聖經節 -->
+    <section class="bg-hope-green rounded-2xl p-10 text-center">
+      <p class="text-2xl font-medium text-white leading-relaxed">
+        「愛是恆久忍耐，又有恩慈；<br />
+        愛是不嫉妒；愛是不自誇，不張狂。」
+      </p>
+      <cite class="mt-4 block text-green-100 not-italic text-sm">哥林多前書 13：4</cite>
+    </section>
+
+    <!-- 課程內容 -->
+    <section>
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">在幸福小聚，你將探索</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        {[
+          { icon: '💡', title: '認識真實的愛', desc: '從聖經的角度重新定義愛，超越情感的起伏' },
+          { icon: '🤝', title: '學習溝通與理解', desc: '建立深度連結，讓婚姻關係更加緊密' },
+          { icon: '🌱', title: '共同成長', desc: '夫妻一起在信仰中成長，成為彼此最好的隊友' },
+          { icon: '🏠', title: '建立幸福家庭', desc: '從婚姻延伸到家庭，讓愛的影響力傳遞給下一代' },
+        ].map((item) => (
+          <div class="flex items-start gap-4 p-5 bg-gray-50 rounded-xl">
+            <span class="text-2xl flex-shrink-0">{item.icon}</span>
+            <div>
+              <h3 class="font-bold text-gray-900 mb-1">{item.title}</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="text-center bg-gray-50 rounded-2xl p-10">
+      <h2 class="text-2xl font-bold text-gray-900 mb-3">歡迎你來參加</h2>
+      <p class="text-gray-600 mb-8">不管你是已婚、交往中，或還在等待的單身，這裡都有你的位置</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="px-8 py-3 bg-hope-green text-white font-semibold rounded-full hover:bg-hope-green-dark transition-colors">
+          聯絡我們
+        </a>
+        <a href="/pastor/groups" class="px-8 py-3 border-2 border-hope-green text-hope-green font-semibold rounded-full hover:bg-hope-green-light transition-colors">
+          加入小組
+        </a>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>

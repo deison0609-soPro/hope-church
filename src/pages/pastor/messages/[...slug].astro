@@ -1,0 +1,29 @@
+---
+import { getCollection } from 'astro:content';
+import PostLayout from '../../../layouts/PostLayout.astro';
+
+export async function getStaticPaths() {
+  const messages = await getCollection('messages');
+  return messages.map((msg) => ({
+    params: { slug: msg.slug },
+    props: { msg },
+  }));
+}
+
+const { msg } = Astro.props;
+const { Content } = await msg.render();
+---
+<PostLayout
+  title={msg.data.title}
+  date={msg.data.date}
+  description={msg.data.description}
+  backLink="/pastor/messages"
+  backLabel="主日信息"
+>
+  {msg.data.scripture && (
+    <p class="not-prose text-hope-green font-medium text-sm mb-6 border-l-4 border-hope-green pl-4 py-1">
+      經文：{msg.data.scripture}
+    </p>
+  )}
+  <Content />
+</PostLayout>

@@ -1,0 +1,125 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const groups = [
+  {
+    name: '柯哥小組',
+    leader: '柯哥',
+    desc: '是資深帥哥美女的園地！雖然兒女都已長大成人，但空虛寂寞卻不是我們的代名詞！因為在這個美好的家充滿活力、希望，主的愛使我們更加茁壯、強健。',
+    time: '週四晚上 19:30–21:30',
+    tag: '銀髮族',
+    color: 'bg-purple-50 border-purple-200',
+    tagColor: 'bg-purple-100 text-purple-700',
+  },
+  {
+    name: '德松小組',
+    leader: '德松',
+    desc: '壯年族的成長天地，只要你的年齡至不惑之年，都歡迎您的加入，讓神的祝福大大的臨到你！',
+    time: '週五晚上 20:00–21:30',
+    tag: '壯年族',
+    color: 'bg-blue-50 border-blue-200',
+    tagColor: 'bg-blue-100 text-blue-700',
+  },
+  {
+    name: '政億小組',
+    leader: '政億',
+    desc: '年輕人與年輕夫妻的組合，讓青春的火花在此點燃，陪伴你從單身進入已婚，陪你的家庭更加美滿。有基督的愛使一切夢想都將變成可能！',
+    time: '週日下午 12:30–14:00',
+    tag: '年輕夫妻',
+    color: 'bg-orange-50 border-orange-200',
+    tagColor: 'bg-orange-100 text-orange-700',
+  },
+  {
+    name: '士倚小組',
+    leader: '士倚',
+    desc: '充滿朝氣、有活力的年輕人與滿腔熱血、活躍的年輕夫妻組合！除了每週的小組，更時常相約出遊聚會，不僅僅只是教會中的屬靈家人、更是日常生活中互相扶持、彼此關懷相愛的家人朋友。',
+    time: '週四晚上 19:40–21:10',
+    tag: '年輕活力',
+    color: 'bg-yellow-50 border-yellow-200',
+    tagColor: 'bg-yellow-100 text-yellow-700',
+  },
+  {
+    name: '聖閔小組',
+    leader: '聖閔',
+    desc: '歡迎你一起加入參與我們彼此生命中重要的時刻，以及點點滴滴～在這裡，我們永遠隨時歡迎你！一起奔跑天路，你。不。孤。單！',
+    time: '週五晚上 19:40–21:10',
+    tag: '溫馨包容',
+    color: 'bg-pink-50 border-pink-200',
+    tagColor: 'bg-pink-100 text-pink-700',
+  },
+  {
+    name: '主豪小組',
+    leader: '主豪',
+    desc: '充滿著愛和年輕活力，彼此關心和支持，相互分享生活的點滴，建立了深厚的友誼！並相信上帝的引導和祝福，給予我們方向和力量，是一個充滿溫暖、希望和愛的小組。',
+    time: '週二晚上 19:40–21:10',
+    tag: '年輕有愛',
+    color: 'bg-green-50 border-green-200',
+    tagColor: 'bg-green-100 text-green-700',
+  },
+];
+---
+<BaseLayout title="加入小組" description="台中希望教會小組一覽——找到屬於你的屬靈家人">
+
+  <div class="bg-hope-green-light border-b border-green-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+      <nav class="text-sm text-gray-500 mb-3">
+        <a href="/pastor" class="hover:text-hope-green">牧者頻道</a>
+        <span class="mx-2">/</span>
+        <span>加入小組</span>
+      </nav>
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900">加入小組</h1>
+      <p class="mt-2 text-gray-600">找到屬於你的屬靈家人</p>
+    </div>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 space-y-16">
+
+    <!-- 小組列表 -->
+    <section>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {groups.map((group) => (
+          <div class={`rounded-2xl border p-6 ${group.color}`}>
+            <div class="flex items-start justify-between mb-3">
+              <h3 class="text-xl font-bold text-gray-900">{group.name}</h3>
+              <span class={`text-xs font-medium px-2.5 py-1 rounded-full flex-shrink-0 ml-2 ${group.tagColor}`}>
+                {group.tag}
+              </span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-4">{group.desc}</p>
+            <div class="flex items-center gap-2 text-sm text-gray-600">
+              <svg class="w-4 h-4 text-hope-green flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span class="font-medium">{group.time}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- 報名表單 -->
+    <section class="bg-gray-50 rounded-2xl p-8 md:p-10">
+      <div class="text-center mb-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-2">很高興您來到台中希望教會</h2>
+        <p class="text-gray-600">歡迎留下資料，期待更多認識您！</p>
+      </div>
+
+      <!-- Google Form 嵌入區 -->
+      <div class="bg-white border-2 border-dashed border-gray-200 rounded-xl p-8 text-center text-gray-400">
+        <svg class="w-10 h-10 mx-auto mb-3 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        </svg>
+        <p class="text-sm">Google 報名表單嵌入位置</p>
+        <p class="text-xs mt-1">（將 Google Form iframe 貼到這裡）</p>
+      </div>
+
+      <div class="mt-8 pt-6 border-t border-gray-200 text-center space-y-1 text-sm text-gray-600">
+        <p>幸福專線：<a href="tel:0422651572" class="text-hope-green">(04) 2265-1572</a></p>
+        <p>希望信箱：<a href="mailto:17gohope@gmail.com" class="text-hope-green">17gohope@gmail.com</a></p>
+        <p>教會地址：台中市南區工學北路169號</p>
+        <p>服務時間：AM 09:00 – PM 17:30</p>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>

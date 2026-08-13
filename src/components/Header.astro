@@ -1,0 +1,118 @@
+---
+const navItems = [
+  { label: '關於希望', href: '/about' },
+  { label: '最新消息', href: '/news' },
+  {
+    label: '牧者頻道',
+    href: '/pastor',
+    children: [
+      { label: '主日信息', href: '/pastor/messages' },
+      { label: '加入小組', href: '/pastor/groups' },
+    ],
+  },
+  { label: '幸福小聚', href: '/happiness' },
+  { label: '未來領袖', href: '/youth' },
+  { label: '聯絡我們', href: '/contact' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2 flex-shrink-0">
+        <img src="/images/logo.png" alt="台中希望教會" class="h-10 w-auto" />
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-1">
+        {navItems.map((item) => (
+          item.children ? (
+            <div class="relative group">
+              <a
+                href={item.href}
+                class={`px-3 py-2 text-sm font-medium rounded-md transition-colors flex items-center gap-1
+                  ${currentPath.startsWith(item.href)
+                    ? 'text-hope-green bg-hope-green-light'
+                    : 'text-gray-700 hover:text-hope-green hover:bg-hope-green-light'}`}
+              >
+                {item.label}
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </a>
+              <div class="absolute top-full left-0 mt-1 w-36 bg-white rounded-lg shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150">
+                {item.children.map((child) => (
+                  <a
+                    href={child.href}
+                    class="block px-4 py-2.5 text-sm text-gray-700 hover:text-hope-green hover:bg-hope-green-light first:rounded-t-lg last:rounded-b-lg transition-colors"
+                  >
+                    {child.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <a
+              href={item.href}
+              class={`px-3 py-2 text-sm font-medium rounded-md transition-colors
+                ${currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href))
+                  ? 'text-hope-green bg-hope-green-light'
+                  : 'text-gray-700 hover:text-hope-green hover:bg-hope-green-light'}`}
+            >
+              {item.label}
+            </a>
+          )
+        ))}
+      </nav>
+
+      <!-- Mobile menu button -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md text-gray-600 hover:text-hope-green hover:bg-hope-green-light transition-colors" aria-label="開啟選單">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Nav -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 bg-white">
+    <div class="px-4 py-3 space-y-1">
+      {navItems.map((item) => (
+        <div>
+          <a
+            href={item.href}
+            class={`block px-3 py-2 rounded-md text-sm font-medium transition-colors
+              ${currentPath.startsWith(item.href)
+                ? 'text-hope-green bg-hope-green-light'
+                : 'text-gray-700 hover:text-hope-green hover:bg-hope-green-light'}`}
+          >
+            {item.label}
+          </a>
+          {item.children && (
+            <div class="ml-4 mt-1 space-y-1">
+              {item.children.map((child) => (
+                <a
+                  href={child.href}
+                  class="block px-3 py-2 rounded-md text-sm text-gray-600 hover:text-hope-green hover:bg-hope-green-light transition-colors"
+                >
+                  {child.label}
+                </a>
+              ))}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+  });
+</script>

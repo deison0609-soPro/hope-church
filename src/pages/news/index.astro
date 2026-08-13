@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('news')).sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+
+function formatDate(dateStr: string) {
+  const d = new Date(dateStr);
+  return d.toLocaleDateString('zh-TW', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+---
+<BaseLayout title="最新消息" description="台中希望教會最新消息——活動回顧與教會動態">
+
+  <div class="bg-hope-green-light border-b border-green-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900">最新消息</h1>
+      <p class="mt-2 text-gray-600">教會活動與最新動態</p>
+    </div>
+  </div>
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-16">
+    {posts.length === 0 ? (
+      <p class="text-gray-500 text-center py-12">目前沒有消息，請稍後再來。</p>
+    ) : (
+      <div class="space-y-6">
+        {posts.map((post) => (
+          <a
+            href={`/news/${post.slug}`}
+            class="group block bg-white rounded-2xl border border-gray-100 hover:border-hope-green hover:shadow-md transition-all duration-200 p-6"
+          >
+            <time class="text-sm text-gray-500">{formatDate(post.data.date)}</time>
+            <h2 class="mt-1 text-xl font-bold text-gray-900 group-hover:text-hope-green transition-colors">
+              {post.data.title}
+            </h2>
+            {post.data.description && (
+              <p class="mt-2 text-gray-600 text-sm leading-relaxed line-clamp-2">{post.data.description}</p>
+            )}
+            <span class="mt-4 inline-flex items-center text-hope-green text-sm font-medium">
+              閱讀全文
+              <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </span>
+          </a>
+        ))}
+      </div>
+    )}
+  </div>
+</BaseLayout>

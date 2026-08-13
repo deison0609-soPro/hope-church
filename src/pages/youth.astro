@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="未來領袖" description="台中希望教會青少年事工——青少年就是未來的領袖">
+
+  <div class="bg-hope-green-light border-b border-green-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900">未來領袖</h1>
+      <p class="mt-2 text-gray-600">青少年事工</p>
+    </div>
+  </div>
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-16 space-y-16">
+
+    <!-- Hero message -->
+    <section class="text-center">
+      <div class="inline-block bg-hope-green text-white text-sm font-medium px-4 py-1.5 rounded-full mb-6">
+        青少年事工
+      </div>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 leading-snug mb-6">
+        青少年就是<br />未來的領袖
+      </h2>
+      <p class="text-lg text-gray-600 leading-relaxed max-w-xl mx-auto">
+        機會是給預備好的人<br />
+        不沉迷於徬徨的世代
+      </p>
+    </section>
+
+    <!-- 核心信念 -->
+    <section class="bg-hope-green rounded-2xl p-10 text-center">
+      <p class="text-2xl font-medium text-white leading-relaxed">
+        靠著耶穌，<br />就有勇敢追夢的勇氣與實力
+      </p>
+    </section>
+
+    <!-- 呼召 -->
+    <section class="text-center space-y-6">
+      <h2 class="text-2xl font-bold text-gray-900">你家裡也有青少年嗎？</h2>
+      <p class="text-lg text-gray-600 leading-relaxed">
+        Come! Follow US!<br />
+        快來加入青少小組<br />
+        一起成為最有活力的下一代
+      </p>
+      <p class="text-xl font-bold text-hope-green">
+        成為下一世代的頂尖領袖
+      </p>
+    </section>
+
+    <!-- 特色 -->
+    <section>
+      <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">在未來領袖，你將得到</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[
+          { emoji: '🔥', title: '屬靈的火焰', desc: '在信仰中找到方向，活出有意義、有熱情的青春' },
+          { emoji: '👫', title: '真實的友誼', desc: '與同齡的朋友一起成長，建立深厚且純正的友誼' },
+          { emoji: '🦁', title: '領袖的裝備', desc: '培養品格與能力，成為這個世代真正的領袖' },
+        ].map((item) => (
+          <div class="text-center p-6 bg-gray-50 rounded-xl">
+            <span class="text-4xl block mb-4">{item.emoji}</span>
+            <h3 class="font-bold text-gray-900 mb-2">{item.title}</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="text-center bg-hope-green-light rounded-2xl p-10">
+      <h2 class="text-2xl font-bold text-gray-900 mb-3">準備好加入了嗎？</h2>
+      <p class="text-gray-600 mb-8">歡迎聯絡我們，讓你的孩子找到最好的成長環境</p>
+      <a href="/contact" class="inline-flex items-center px-8 py-3 bg-hope-green text-white font-semibold rounded-full hover:bg-hope-green-dark transition-colors">
+        聯絡我們
+        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </section>
+
+  </div>
+</BaseLayout>

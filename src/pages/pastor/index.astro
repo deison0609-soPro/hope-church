@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout title="牧者頻道" description="台中希望教會牧者頻道——主日信息與小組">
+
+  <div class="bg-hope-green-light border-b border-green-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900">牧者頻道</h1>
+      <p class="mt-2 text-gray-600">主日信息 · 加入小組</p>
+    </div>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+      <a href="/pastor/messages" class="group block p-8 bg-gray-50 rounded-2xl hover:shadow-lg hover:bg-hope-green-light transition-all duration-200 border border-transparent hover:border-hope-green">
+        <div class="w-12 h-12 bg-hope-green rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+          </svg>
+        </div>
+        <h2 class="text-xl font-bold text-gray-900 mb-2">主日信息</h2>
+        <p class="text-gray-600 text-sm leading-relaxed mb-4">每週主日信息文字版，讓上帝的話語陪伴你一整週</p>
+        <span class="inline-flex items-center text-hope-green font-medium text-sm group-hover:gap-2 transition-all">
+          查看信息
+          <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </span>
+      </a>
+
+      <a href="/pastor/groups" class="group block p-8 bg-gray-50 rounded-2xl hover:shadow-lg hover:bg-hope-green-light transition-all duration-200 border border-transparent hover:border-hope-green">
+        <div class="w-12 h-12 bg-hope-green rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+        </div>
+        <h2 class="text-xl font-bold text-gray-900 mb-2">加入小組</h2>
+        <p class="text-gray-600 text-sm leading-relaxed mb-4">各年齡層小組，找到屬於你的屬靈家人，一起成長</p>
+        <span class="inline-flex items-center text-hope-green font-medium text-sm">
+          查看小組
+          <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </span>
+      </a>
+
+    </div>
+  </div>
+</BaseLayout>

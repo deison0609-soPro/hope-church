@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const messages = (await getCollection('messages')).sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+
+function formatDate(dateStr: string) {
+  const d = new Date(dateStr);
+  return d.toLocaleDateString('zh-TW', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+---
+<BaseLayout title="主日信息" description="台中希望教會每週主日信息文字版">
+
+  <div class="bg-hope-green-light border-b border-green-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+      <nav class="text-sm text-gray-500 mb-3">
+        <a href="/pastor" class="hover:text-hope-green">牧者頻道</a>
+        <span class="mx-2">/</span>
+        <span>主日信息</span>
+      </nav>
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900">主日信息</h1>
+      <p class="mt-2 text-gray-600">每週主日信息文字版</p>
+    </div>
+  </div>
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-16">
+    {messages.length === 0 ? (
+      <p class="text-gray-500 text-center py-12">目前尚無信息，請稍後再來。</p>
+    ) : (
+      <div class="space-y-6">
+        {messages.map((msg) => (
+          <a
+            href={`/pastor/messages/${msg.slug}`}
+            class="group block bg-white rounded-2xl border border-gray-100 hover:border-hope-green hover:shadow-md transition-all duration-200 p-6"
+          >
+            <time class="text-sm text-gray-500">{formatDate(msg.data.date)}</time>
+            {msg.data.scripture && (
+              <p class="text-xs text-hope-green font-medium mt-0.5">{msg.data.scripture}</p>
+            )}
+            <h2 class="mt-1 text-xl font-bold text-gray-900 group-hover:text-hope-green transition-colors">
+              {msg.data.title}
+            </h2>
+            {msg.data.description && (
+              <p class="mt-2 text-gray-600 text-sm leading-relaxed">{msg.data.description}</p>
+            )}
+            <span class="mt-4 inline-flex items-center text-hope-green text-sm font-medium">
+              閱讀信息
+              <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </span>
+          </a>
+        ))}
+      </div>
+    )}
+  </div>
+</BaseLayout>

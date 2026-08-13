@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="聯絡我們" description="聯絡台中希望教會——地址、電話、信箱、服務時間">
+
+  <div class="bg-hope-green-light border-b border-green-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900">聯絡我們</h1>
+      <p class="mt-2 text-gray-600">歡迎隨時與我們聯繫</p>
+    </div>
+  </div>
+
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+      <!-- 聯絡資訊 -->
+      <div class="space-y-8">
+        <div>
+          <h2 class="text-2xl font-bold text-gray-900 mb-6">教會資訊</h2>
+          <div class="space-y-5">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-hope-green-light rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-hope-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <div>
+                <p class="font-semibold text-gray-900">教會地址</p>
+                <p class="text-gray-600 mt-0.5">台中市南區工學北路169號</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-hope-green-light rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-hope-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+              </div>
+              <div>
+                <p class="font-semibold text-gray-900">幸福專線</p>
+                <a href="tel:0422651572" class="text-hope-green hover:underline mt-0.5 block">(04) 2265-1572</a>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-hope-green-light rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-hope-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div>
+                <p class="font-semibold text-gray-900">電子信箱</p>
+                <a href="mailto:17gohope@gmail.com" class="text-hope-green hover:underline mt-0.5 block">17gohope@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-hope-green-light rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-hope-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <p class="font-semibold text-gray-900">服務時間</p>
+                <p class="text-gray-600 mt-0.5">週一至週五　AM 09:00 – PM 17:30</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Google Maps placeholder -->
+        <div class="bg-gray-100 rounded-xl h-56 flex items-center justify-center text-gray-400 text-sm">
+          地圖嵌入位置<br /><span class="text-xs">（Google Maps iframe）</span>
+        </div>
+      </div>
+
+      <!-- 聯絡表單說明 -->
+      <div>
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">留下你的資料</h2>
+        <p class="text-gray-600 mb-6 leading-relaxed">
+          歡迎留下資料，我們很期待更多認識你。無論你有任何問題、想了解小組或活動，都歡迎與我們聯繫！
+        </p>
+        <!-- Google Form 嵌入區 -->
+        <div class="bg-gray-50 border-2 border-dashed border-gray-200 rounded-xl p-8 text-center text-gray-400">
+          <svg class="w-10 h-10 mx-auto mb-3 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+          <p class="text-sm">Google 表單嵌入位置</p>
+          <p class="text-xs mt-1">（將 Google Form iframe 貼到這裡）</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</BaseLayout>
