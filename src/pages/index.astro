@@ -3,44 +3,106 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="" description="台中希望教會｜讓愛天天住你家，台中南區基督教教會">
 
-  <!-- Hero -->
-  <section class="relative bg-hope-green overflow-hidden">
-    <div class="absolute inset-0 opacity-10">
-      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,white,transparent_70%)]"></div>
-    </div>
-    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 py-24 md:py-36 text-center">
-      <img src="/images/logo.png" alt="台中希望教會" class="h-20 w-auto mx-auto mb-8 drop-shadow-lg" />
-      <h1 class="text-4xl md:text-5xl font-bold text-white leading-tight">
-        讓愛天天住你家
-      </h1>
-      <p class="mt-4 text-lg md:text-xl text-green-100 max-w-xl mx-auto">
-        歡迎來到台中希望教會，這裡是你溫暖的家
-      </p>
-      <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/happiness" class="px-8 py-3 bg-white text-hope-green font-semibold rounded-full hover:bg-green-50 transition-colors shadow-md">
-          認識幸福小聚
-        </a>
-        <a href="/about" class="px-8 py-3 border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-hope-green transition-colors">
-          認識我們
-        </a>
+  <!-- Hero — 左文右圖 split layout -->
+  <section class="bg-white overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-0 min-h-[90vh] items-center py-16 md:py-0">
+
+        <!-- 左側文字 -->
+        <div class="space-y-8 md:pr-12">
+          <!-- 小標籤 -->
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-px bg-hope-green"></div>
+            <span class="text-hope-green text-sm font-medium tracking-widest uppercase">17 Go Hope Church</span>
+          </div>
+
+          <!-- 大標題 -->
+          <div>
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight">
+              讓愛<br />
+              天天<span class="text-hope-green">住</span>你家
+            </h1>
+            <p class="mt-6 text-lg text-gray-500 leading-relaxed max-w-md">
+              台中希望教會——一個活力、歡樂的大家庭。<br />
+              在這裡彼此相愛、相互扶持，一起經歷上帝的帶領與祝福。
+            </p>
+          </div>
+
+          <!-- 雙 CTA -->
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/pastor/groups"
+              class="px-8 py-3.5 bg-hope-green text-white font-semibold rounded-full hover:bg-hope-green-dark transition-colors shadow-lg shadow-green-200 text-center">
+              加入小組
+            </a>
+            <a href="/about"
+              class="px-8 py-3.5 border-2 border-gray-200 text-gray-700 font-semibold rounded-full hover:border-hope-green hover:text-hope-green transition-colors text-center">
+              認識我們
+            </a>
+          </div>
+
+          <!-- 統計數字 -->
+          <div class="flex gap-10 pt-4 border-t border-gray-100">
+            <div>
+              <div class="text-3xl font-bold text-gray-900">2012</div>
+              <div class="text-sm text-gray-500 mt-0.5">教會成立</div>
+            </div>
+            <div>
+              <div class="text-3xl font-bold text-gray-900">6+</div>
+              <div class="text-sm text-gray-500 mt-0.5">活躍小組</div>
+            </div>
+            <div>
+              <div class="text-3xl font-bold text-gray-900">20+</div>
+              <div class="text-sm text-gray-500 mt-0.5">服事年份</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 右側圖片 -->
+        <div class="relative hidden md:block h-[90vh]">
+          <div class="absolute inset-0 bg-hope-green-light rounded-l-[4rem]"></div>
+          <img
+            src="/images/church-group.jpg"
+            alt="台中希望教會大家庭"
+            class="absolute inset-4 w-[calc(100%-2rem)] h-[calc(100%-2rem)] object-cover rounded-l-[3.5rem] shadow-2xl"
+          />
+          <!-- 浮動標籤 -->
+          <div class="absolute bottom-12 -left-6 bg-white rounded-2xl shadow-xl px-5 py-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-hope-green-light rounded-full flex items-center justify-center">
+                <svg class="w-5 h-5 text-hope-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                </svg>
+              </div>
+              <div>
+                <div class="text-xs text-gray-500">教會地址</div>
+                <div class="text-sm font-semibold text-gray-800">台中市南區工學北路169號</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
   <!-- 三個入口 -->
-  <section class="py-20 bg-white">
+  <section class="py-20 bg-gray-50">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="text-center mb-12">
+        <h2 class="text-2xl font-bold text-gray-900">你想從哪裡開始？</h2>
+        <p class="mt-2 text-gray-500">歡迎以任何方式認識我們</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-        <a href="/happiness" class="group p-8 rounded-2xl border border-gray-100 hover:border-hope-green hover:shadow-lg transition-all duration-200">
-          <div class="w-12 h-12 bg-hope-green-light rounded-xl flex items-center justify-center mb-5 group-hover:bg-hope-green group-hover:text-white transition-colors">
+        <a href="/happiness" class="group p-8 bg-white rounded-2xl hover:shadow-lg hover:-translate-y-1 transition-all duration-200 border border-transparent hover:border-hope-green">
+          <div class="w-12 h-12 bg-hope-green-light rounded-xl flex items-center justify-center mb-5 group-hover:bg-hope-green transition-colors">
             <svg class="w-6 h-6 text-hope-green group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
             </svg>
           </div>
           <h3 class="text-xl font-bold text-gray-900 mb-2">幸福小聚</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">用聖經智慧探索幸福婚姻與家庭，歡迎夫妻、單身朋友一起來</p>
-          <span class="mt-4 inline-flex items-center text-hope-green text-sm font-medium">
+          <p class="text-gray-500 text-sm leading-relaxed">用聖經智慧探索幸福婚姻與家庭，已婚、單身都歡迎</p>
+          <span class="mt-5 inline-flex items-center text-hope-green text-sm font-medium">
             了解更多
             <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -48,15 +110,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </span>
         </a>
 
-        <a href="/pastor/groups" class="group p-8 rounded-2xl border border-gray-100 hover:border-hope-green hover:shadow-lg transition-all duration-200">
+        <a href="/pastor/groups" class="group p-8 bg-white rounded-2xl hover:shadow-lg hover:-translate-y-1 transition-all duration-200 border border-transparent hover:border-hope-green">
           <div class="w-12 h-12 bg-hope-green-light rounded-xl flex items-center justify-center mb-5 group-hover:bg-hope-green transition-colors">
             <svg class="w-6 h-6 text-hope-green group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
           </div>
           <h3 class="text-xl font-bold text-gray-900 mb-2">加入小組</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">從年輕單身到銀髮夫妻，各年齡層都有歸屬，找到屬於你的小組</p>
-          <span class="mt-4 inline-flex items-center text-hope-green text-sm font-medium">
+          <p class="text-gray-500 text-sm leading-relaxed">各年齡層小組，找到屬於你的屬靈家人，一起成長</p>
+          <span class="mt-5 inline-flex items-center text-hope-green text-sm font-medium">
             了解更多
             <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -64,15 +126,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </span>
         </a>
 
-        <a href="/pastor/messages" class="group p-8 rounded-2xl border border-gray-100 hover:border-hope-green hover:shadow-lg transition-all duration-200">
+        <a href="/pastor/messages" class="group p-8 bg-white rounded-2xl hover:shadow-lg hover:-translate-y-1 transition-all duration-200 border border-transparent hover:border-hope-green">
           <div class="w-12 h-12 bg-hope-green-light rounded-xl flex items-center justify-center mb-5 group-hover:bg-hope-green transition-colors">
             <svg class="w-6 h-6 text-hope-green group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
             </svg>
           </div>
           <h3 class="text-xl font-bold text-gray-900 mb-2">主日信息</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">每週主日信息文字版，讓上帝的話語陪伴你一整週</p>
-          <span class="mt-4 inline-flex items-center text-hope-green text-sm font-medium">
+          <p class="text-gray-500 text-sm leading-relaxed">每週主日信息文字版，讓上帝的話語陪伴你一整週</p>
+          <span class="mt-5 inline-flex items-center text-hope-green text-sm font-medium">
             了解更多
             <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -85,12 +147,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </section>
 
   <!-- Bible verse banner -->
-  <section class="py-16 bg-hope-green-light">
+  <section class="py-20 bg-hope-green">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
-      <blockquote class="text-xl md:text-2xl font-medium text-hope-green-dark leading-relaxed">
+      <div class="w-10 h-px bg-green-300 mx-auto mb-8"></div>
+      <blockquote class="text-2xl md:text-3xl font-medium text-white leading-relaxed">
         「你們要聖潔，因為我耶和華你們的神是聖潔的。」
       </blockquote>
-      <cite class="mt-4 block text-sm text-gray-500 not-italic">利未記 19：2</cite>
+      <cite class="mt-5 block text-green-200 not-italic text-sm tracking-wide">利未記 19：2</cite>
+      <div class="w-10 h-px bg-green-300 mx-auto mt-8"></div>
     </div>
   </section>
 
@@ -99,14 +163,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div>
-          <h2 class="text-3xl font-bold text-gray-900 mb-4">關於台中希望教會</h2>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-px bg-hope-green"></div>
+            <span class="text-hope-green text-sm font-medium tracking-widest uppercase">About Us</span>
+          </div>
+          <h2 class="text-3xl font-bold text-gray-900 mb-5">關於台中希望教會</h2>
           <p class="text-gray-600 leading-relaxed mb-4">
-            台中希望教會位於台中市南區，是一個充滿活力與愛的基督教會。
-            我們相信每一個人都值得被愛、被接納，在這裡你可以找到屬靈的家人。
+            希望教會成立於 2012 年，由林志仁牧師與蔡鳳梅傳道帶領，是一個充滿活力與愛的基督教會。
           </p>
-          <p class="text-gray-600 leading-relaxed mb-6">
-            「希望」不只是我們的名字，更是我們對每一位來到教會的朋友的承諾——
-            無論你現在在哪裡，這裡永遠有一盞燈為你亮著。
+          <p class="text-gray-600 leading-relaxed mb-8">
+            我們相信每一個人都值得被愛、被接納。在這裡不分貧富、階級，一起在耶穌基督裡生根建造，讓信心增長、愛心增長、祝福增長。
           </p>
           <a href="/about" class="inline-flex items-center px-6 py-3 bg-hope-green text-white font-semibold rounded-full hover:bg-hope-green-dark transition-colors">
             認識我們
@@ -117,7 +183,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
         <div class="rounded-2xl overflow-hidden shadow-md">
           <img
-            src="/images/church-group.jpg"
+            src="/images/church-community.jpg"
             alt="台中希望教會大家庭"
             class="w-full h-full object-cover"
           />
