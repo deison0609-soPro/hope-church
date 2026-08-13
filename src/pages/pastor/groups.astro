@@ -104,7 +104,14 @@ const groups = [
         <p class="text-gray-600">歡迎留下資料，期待更多認識您！</p>
       </div>
 
+      <div id="groups-success" class="hidden bg-hope-green-light border border-hope-green rounded-xl p-6 text-center">
+        <div class="text-4xl mb-3">🙏</div>
+        <h3 class="text-lg font-bold text-hope-green-dark mb-1">報名成功！</h3>
+        <p class="text-gray-600 text-sm">我們已收到您的報名資料，將盡快與您聯繫，歡迎加入希望教會大家庭！</p>
+      </div>
+
       <form
+        id="groups-form"
         action="https://formspree.io/f/meajkbbq"
         method="POST"
         class="space-y-4"
@@ -155,6 +162,23 @@ const groups = [
           送出報名
         </button>
       </form>
+
+      <script>
+        const form = document.getElementById('groups-form');
+        form?.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const data = new FormData(form);
+          const res = await fetch(form.action, {
+            method: 'POST',
+            body: data,
+            headers: { 'Accept': 'application/json' }
+          });
+          if (res.ok) {
+            form.classList.add('hidden');
+            document.getElementById('groups-success')?.classList.remove('hidden');
+          }
+        });
+      </script>
 
       <div class="mt-8 pt-6 border-t border-gray-200 text-center space-y-1 text-sm text-gray-600">
         <p>幸福專線：<a href="tel:0422651572" class="text-hope-green">(04) 2265-1572</a></p>
