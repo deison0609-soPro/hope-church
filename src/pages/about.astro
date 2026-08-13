@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="關於希望" description="認識台中希望教會——我們的牧者、歷史、使命與核心價值">
+<BaseLayout title="關於希望" description="認識台中希望教會——我們的牧者、歷史、使命與核心異象">
 
   <!-- Page Header -->
   <div class="bg-hope-green-light border-b border-green-100">
@@ -13,98 +13,81 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 space-y-20">
 
-    <!-- 核心信念 -->
+    <!-- 教會介紹 -->
     <section>
       <div class="max-w-3xl">
-        <h2 class="text-2xl font-bold text-gray-900 mb-6">我們相信</h2>
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">教會介紹</h2>
         <div class="space-y-4 text-gray-700 leading-relaxed text-lg">
           <p>
-            台中希望教會，我們是一個充滿活力與希望、愛的教會。相信每個人的生命都是獨特且美麗的，
-            神愛世人的大愛使我們的生命更加豐盛，每個生命都像花草樹木一樣，在陽光雨露中不斷成長。
+            希望教會成立於 2012 年 10 月 7 日，由大里思恩堂高達榮主任牧師差派林志仁、蔡鳳梅傳道至台中南區開拓教會。
           </p>
           <p>
-            我們是一個家，每一個來到的人都是家人，彼此相愛、一起成長，在神的愛裡找到真正的歸屬。
+            希望教會是一個活力、歡樂的大家庭。在這裡我們一起追求生命的成長，一起經歷耶穌基督慈愛與恩惠，彼此相愛、相互扶持，一起同得福音的好處，一起經歷上帝的引導、能力與祝福，使人因著福音滿有希望。
+          </p>
+          <p>
+            在這個家我們不分貧富、階級、黨派，一起在耶穌基督裡生根建造，讓信心增長、愛心增長、祝福增長。我們專心倚靠天父上帝的帶領，培養與天父上帝真實親密的關係，建造生命品格、追尋人生意義、實踐家庭價值，使天父上帝對每個人美好的祝福計畫得以成全，以至於神的祝福可以遍滿全地。
+          </p>
+          <p class="font-medium text-hope-green-dark">
+            歡迎您的加入——我們希望可以陪伴您，與您一同走人生路程，也讓上帝的愛透過你我更多地傳遞出去。
           </p>
         </div>
       </div>
     </section>
 
-    <!-- 聖經節 -->
+    <!-- 宗旨 -->
     <section class="bg-hope-green rounded-2xl p-8 md:p-12 text-center">
-      <p class="text-2xl md:text-3xl font-medium text-white leading-relaxed">
-        「你們要聖潔，<br />因為我耶和華你們的神是聖潔的。」
-      </p>
-      <cite class="mt-4 block text-green-200 not-italic">利未記 19：2</cite>
+      <h2 class="text-xl font-semibold text-green-100 mb-6">我們的宗旨</h2>
+      <div class="flex flex-col md:flex-row justify-center gap-8 md:gap-16">
+        {[
+          '傳揚耶穌愛的恩典',
+          '領受上帝無限祝福',
+          '落實愛人如己精神',
+        ].map((item) => (
+          <div class="text-white text-xl font-bold">{item}</div>
+        ))}
+      </div>
     </section>
 
     <!-- 牧者介紹 -->
     <section>
       <h2 class="text-2xl font-bold text-gray-900 mb-8">我們的牧者</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-        <div class="bg-gray-50 rounded-2xl p-8">
-          <div class="flex items-center gap-4 mb-6">
-            <div class="w-16 h-16 bg-hope-green rounded-full flex items-center justify-center text-white text-2xl font-bold flex-shrink-0">
+      <div class="bg-gray-50 rounded-2xl p-8 md:p-10">
+        <div class="flex flex-col md:flex-row items-start gap-8">
+          <div class="flex gap-4 flex-shrink-0">
+            <div class="w-16 h-16 bg-hope-green rounded-full flex items-center justify-center text-white text-2xl font-bold">
               林
             </div>
-            <div>
-              <h3 class="text-xl font-bold text-gray-900">林德松 牧師</h3>
-              <p class="text-hope-green text-sm font-medium">主任牧師</p>
+            <div class="w-16 h-16 bg-hope-green rounded-full flex items-center justify-center text-white text-2xl font-bold">
+              蔡
             </div>
           </div>
-          <blockquote class="text-gray-600 leading-relaxed italic border-l-4 border-hope-green pl-4">
-            「宣揚神的國度，使萬人以基督信仰改善生命與品格，影響家庭，進而造就社會。」
-          </blockquote>
-        </div>
-
-        <div class="bg-gray-50 rounded-2xl p-8">
-          <div class="flex items-center gap-4 mb-6">
-            <div class="w-16 h-16 bg-hope-green rounded-full flex items-center justify-center text-white text-2xl font-bold flex-shrink-0">
-              陳
-            </div>
-            <div>
-              <h3 class="text-xl font-bold text-gray-900">陳燕惠 師母</h3>
-              <p class="text-hope-green text-sm font-medium">師母</p>
+          <div>
+            <h3 class="text-xl font-bold text-gray-900 mb-1">
+              林志仁 牧師 · 蔡鳳梅 傳道
+              <span class="text-sm font-normal text-gray-500 ml-2">夫婦</span>
+            </h3>
+            <p class="text-hope-green text-sm font-medium mb-4">希望教會牧者</p>
+            <div class="space-y-2 text-gray-600 leading-relaxed">
+              <p>於大里思恩堂服事 20 年，2012 年 3 月完成大里思恩堂新堂裝修及搬遷後，開始籌畫南區教會拓殖事宜。</p>
+              <p>同年 10 月 7 日正式於南區成立希望教會，林志仁傳道於 2016 年按立成為牧師。</p>
             </div>
           </div>
-          <blockquote class="text-gray-600 leading-relaxed italic border-l-4 border-hope-green pl-4">
-            「成為每一個家庭的祝福，讓愛的力量在每個角落流動。」
-          </blockquote>
         </div>
-
       </div>
     </section>
 
-    <!-- 使命與異象 -->
+    <!-- 教會異象 -->
     <section>
-      <h2 class="text-2xl font-bold text-gray-900 mb-8">使命與異象</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <h2 class="text-2xl font-bold text-gray-900 mb-8">教會異象</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="p-6 border border-gray-100 rounded-xl">
-          <div class="w-10 h-10 bg-hope-green-light rounded-lg flex items-center justify-center mb-4">
-            <svg class="w-5 h-5 text-hope-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-            </svg>
-          </div>
-          <h3 class="font-bold text-gray-900 mb-2">宣揚神的國度</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">用基督信仰改善每個生命，讓更多人認識上帝的愛</p>
+          <h3 class="font-bold text-gray-900 mb-3 text-lg">對內造就，對外傳福音</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">與人同得福音的好處</p>
         </div>
-        <div class="p-6 border border-gray-100 rounded-xl">
-          <div class="w-10 h-10 bg-hope-green-light rounded-lg flex items-center justify-center mb-4">
-            <svg class="w-5 h-5 text-hope-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-            </svg>
-          </div>
-          <h3 class="font-bold text-gray-900 mb-2">影響家庭</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">從個人到家庭，讓每個家庭都充滿神的祝福與平安</p>
-        </div>
-        <div class="p-6 border border-gray-100 rounded-xl">
-          <div class="w-10 h-10 bg-hope-green-light rounded-lg flex items-center justify-center mb-4">
-            <svg class="w-5 h-5 text-hope-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
-          <h3 class="font-bold text-gray-900 mb-2">造就社會</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">讓信仰的力量成為社會良善的基石，造福台中這座城市</p>
+        <div class="p-6 bg-hope-green-light rounded-xl">
+          <p class="text-gray-700 leading-relaxed text-sm">
+            我們相信神愛世人。因著神的愛激勵我們，凡我們所行的都是耶穌基督福音的緣故——要將福音的盼望帶給人，使人領受聖靈的能力而大有盼望。讓福音的好處不僅是我們得到，更是要與人同得這福音的好處，讓福音的祝福遍滿全地。
+          </p>
         </div>
       </div>
     </section>
