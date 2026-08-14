@@ -8,27 +8,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     <!-- 文字區 -->
     <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-20 pb-12">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
 
-        <!-- 左欄：小標籤 + 大標題 + 描述 -->
+        <!-- 左欄：小標籤 + 大標題 + 描述 + CTA -->
         <div>
           <div class="flex items-center gap-3 mb-6">
             <div class="w-8 h-px bg-hope-green"></div>
             <span class="text-hope-green text-sm font-medium tracking-widest uppercase">17 Go Hope Church</span>
           </div>
-          <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight mb-6">
+          <h1 class="text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-5">
             讓愛<br />
             天天<span class="text-hope-green">住</span>你家
           </h1>
-          <p class="text-lg text-gray-500 leading-relaxed">
+          <p class="text-lg text-gray-500 leading-relaxed mb-8">
             台中希望教會——一個活力、歡樂的大家庭。<br />
             在這裡彼此相愛、相互扶持，一起經歷上帝的帶領與祝福。
           </p>
-        </div>
-
-        <!-- 右欄：CTA + 統計數字 -->
-        <div class="flex flex-col justify-center gap-10">
-          <!-- 雙 CTA -->
           <div class="flex flex-col sm:flex-row gap-4">
             <a href="/pastor/groups"
               class="px-8 py-3.5 bg-hope-green text-white font-semibold rounded-full hover:bg-hope-green-dark transition-colors shadow-lg shadow-green-200 text-center">
@@ -39,22 +34,42 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               認識我們
             </a>
           </div>
+        </div>
 
-          <!-- 統計數字 -->
-          <div class="flex gap-10 pt-6 border-t border-gray-100">
-            <div>
-              <div class="text-3xl font-bold text-gray-900">2012</div>
-              <div class="text-sm text-gray-500 mt-0.5">教會成立</div>
+        <!-- 右欄：生命影響力 3力 -->
+        <div class="bg-hope-green-light rounded-3xl p-8">
+          <p class="text-xs font-semibold text-hope-green tracking-widest uppercase mb-1">希望教會獨特</p>
+          <h2 class="text-xl font-bold text-gray-900 mb-6">生命影響力 <span class="text-hope-green font-normal text-base">Life Impact</span></h2>
+          <div class="space-y-4">
+            <div class="bg-white rounded-2xl p-5 flex items-start gap-4 shadow-sm">
+              <div class="w-10 h-10 bg-hope-green rounded-xl flex items-center justify-center flex-shrink-0">
+                <span class="text-white font-bold text-sm">領</span>
+              </div>
+              <div>
+                <div class="font-bold text-gray-900 mb-0.5">領袖力</div>
+                <div class="text-sm text-gray-500">領袖意識，發揮影響力</div>
+              </div>
             </div>
-            <div>
-              <div class="text-3xl font-bold text-gray-900">6+</div>
-              <div class="text-sm text-gray-500 mt-0.5">活躍小組</div>
+            <div class="bg-white rounded-2xl p-5 flex items-start gap-4 shadow-sm">
+              <div class="w-10 h-10 bg-hope-green rounded-xl flex items-center justify-center flex-shrink-0">
+                <span class="text-white font-bold text-sm">關</span>
+              </div>
+              <div>
+                <div class="font-bold text-gray-900 mb-0.5">關係力</div>
+                <div class="text-sm text-gray-500">主動連結，擴大影響力</div>
+              </div>
             </div>
-            <div>
-              <div class="text-3xl font-bold text-gray-900">20+</div>
-              <div class="text-sm text-gray-500 mt-0.5">服事年份</div>
+            <div class="bg-white rounded-2xl p-5 flex items-start gap-4 shadow-sm">
+              <div class="w-10 h-10 bg-hope-green rounded-xl flex items-center justify-center flex-shrink-0">
+                <span class="text-white font-bold text-sm">教</span>
+              </div>
+              <div>
+                <div class="font-bold text-gray-900 mb-0.5">教養力</div>
+                <div class="text-sm text-gray-500">紮根真理，深化影響力</div>
+              </div>
             </div>
           </div>
+          <p class="mt-5 text-center text-sm text-hope-green font-medium">「活出你的影響力、讓希望真實可見」</p>
         </div>
 
       </div>
@@ -138,6 +153,54 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </span>
         </a>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- 3力專區 -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <div class="inline-flex items-center gap-2 bg-hope-green-light text-hope-green text-xs font-semibold px-4 py-1.5 rounded-full tracking-widest uppercase mb-4">
+          希望教會獨特 3 力
+        </div>
+        <h2 class="text-3xl font-bold text-gray-900 mb-3">生命影響力</h2>
+        <p class="text-gray-500 max-w-xl mx-auto">希望教會不只是學習的地方，更是裝備每一個人的生命基地——讓你對家庭、職場、社會產生真實的正面影響力。</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div class="p-8 rounded-2xl border border-gray-100 hover:border-hope-green hover:shadow-lg transition-all group">
+          <div class="w-14 h-14 bg-hope-green-light group-hover:bg-hope-green rounded-2xl flex items-center justify-center mb-5 transition-colors">
+            <span class="text-hope-green group-hover:text-white font-bold text-xl transition-colors">領</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">領袖力</h3>
+          <p class="text-hope-green text-sm font-medium mb-3">領袖意識，發揮影響力</p>
+          <p class="text-gray-500 text-sm leading-relaxed">培養你看見可能、帶領他人的眼光與勇氣，讓你的生命成為周圍人的祝福與方向。</p>
+        </div>
+        <div class="p-8 rounded-2xl border border-gray-100 hover:border-hope-green hover:shadow-lg transition-all group">
+          <div class="w-14 h-14 bg-hope-green-light group-hover:bg-hope-green rounded-2xl flex items-center justify-center mb-5 transition-colors">
+            <span class="text-hope-green group-hover:text-white font-bold text-xl transition-colors">關</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">關係力</h3>
+          <p class="text-hope-green text-sm font-medium mb-3">主動連結，擴大影響力</p>
+          <p class="text-gray-500 text-sm leading-relaxed">建立真實、深度的人際連結，讓愛的圈子不斷擴大，帶動更多人一起走向美好。</p>
+        </div>
+        <div class="p-8 rounded-2xl border border-gray-100 hover:border-hope-green hover:shadow-lg transition-all group">
+          <div class="w-14 h-14 bg-hope-green-light group-hover:bg-hope-green rounded-2xl flex items-center justify-center mb-5 transition-colors">
+            <span class="text-hope-green group-hover:text-white font-bold text-xl transition-colors">教</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">教養力</h3>
+          <p class="text-hope-green text-sm font-medium mb-3">紮根真理，深化影響力</p>
+          <p class="text-gray-500 text-sm leading-relaxed">以聖經真理為根基，建造家庭與下一代，讓信仰的果實一代一代地傳承下去。</p>
+        </div>
+      </div>
+      <div class="text-center">
+        <p class="text-lg font-medium text-gray-700 mb-6">「活出你的影響力、讓希望真實可見」</p>
+        <a href="/about" class="inline-flex items-center px-6 py-3 border-2 border-hope-green text-hope-green font-semibold rounded-full hover:bg-hope-green hover:text-white transition-colors">
+          認識更多關於希望教會
+          <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
       </div>
     </div>
   </section>
