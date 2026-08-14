@@ -8,50 +8,55 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     <!-- 文字區 -->
     <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-20 pb-12">
-      <div class="max-w-2xl">
-        <!-- 小標籤 -->
-        <div class="flex items-center gap-3 mb-6">
-          <div class="w-8 h-px bg-hope-green"></div>
-          <span class="text-hope-green text-sm font-medium tracking-widest uppercase">17 Go Hope Church</span>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+        <!-- 左欄：小標籤 + 大標題 + 描述 -->
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-px bg-hope-green"></div>
+            <span class="text-hope-green text-sm font-medium tracking-widest uppercase">17 Go Hope Church</span>
+          </div>
+          <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight mb-6">
+            讓愛<br />
+            天天<span class="text-hope-green">住</span>你家
+          </h1>
+          <p class="text-lg text-gray-500 leading-relaxed">
+            台中希望教會——一個活力、歡樂的大家庭。<br />
+            在這裡彼此相愛、相互扶持，一起經歷上帝的帶領與祝福。
+          </p>
         </div>
 
-        <!-- 大標題 -->
-        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight mb-6">
-          讓愛<br />
-          天天<span class="text-hope-green">住</span>你家
-        </h1>
-        <p class="text-lg text-gray-500 leading-relaxed mb-8">
-          台中希望教會——一個活力、歡樂的大家庭。<br />
-          在這裡彼此相愛、相互扶持，一起經歷上帝的帶領與祝福。
-        </p>
+        <!-- 右欄：CTA + 統計數字 -->
+        <div class="flex flex-col justify-center gap-10">
+          <!-- 雙 CTA -->
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/pastor/groups"
+              class="px-8 py-3.5 bg-hope-green text-white font-semibold rounded-full hover:bg-hope-green-dark transition-colors shadow-lg shadow-green-200 text-center">
+              加入小組
+            </a>
+            <a href="/about"
+              class="px-8 py-3.5 border-2 border-gray-200 text-gray-700 font-semibold rounded-full hover:border-hope-green hover:text-hope-green transition-colors text-center">
+              認識我們
+            </a>
+          </div>
 
-        <!-- 雙 CTA -->
-        <div class="flex flex-col sm:flex-row gap-4 mb-10">
-          <a href="/pastor/groups"
-            class="px-8 py-3.5 bg-hope-green text-white font-semibold rounded-full hover:bg-hope-green-dark transition-colors shadow-lg shadow-green-200 text-center">
-            加入小組
-          </a>
-          <a href="/about"
-            class="px-8 py-3.5 border-2 border-gray-200 text-gray-700 font-semibold rounded-full hover:border-hope-green hover:text-hope-green transition-colors text-center">
-            認識我們
-          </a>
+          <!-- 統計數字 -->
+          <div class="flex gap-10 pt-6 border-t border-gray-100">
+            <div>
+              <div class="text-3xl font-bold text-gray-900">2012</div>
+              <div class="text-sm text-gray-500 mt-0.5">教會成立</div>
+            </div>
+            <div>
+              <div class="text-3xl font-bold text-gray-900">6+</div>
+              <div class="text-sm text-gray-500 mt-0.5">活躍小組</div>
+            </div>
+            <div>
+              <div class="text-3xl font-bold text-gray-900">20+</div>
+              <div class="text-sm text-gray-500 mt-0.5">服事年份</div>
+            </div>
+          </div>
         </div>
 
-        <!-- 統計數字 -->
-        <div class="flex gap-10 pt-6 border-t border-gray-100">
-          <div>
-            <div class="text-3xl font-bold text-gray-900">2012</div>
-            <div class="text-sm text-gray-500 mt-0.5">教會成立</div>
-          </div>
-          <div>
-            <div class="text-3xl font-bold text-gray-900">6+</div>
-            <div class="text-sm text-gray-500 mt-0.5">活躍小組</div>
-          </div>
-          <div>
-            <div class="text-3xl font-bold text-gray-900">20+</div>
-            <div class="text-sm text-gray-500 mt-0.5">服事年份</div>
-          </div>
-        </div>
       </div>
     </div>
 
