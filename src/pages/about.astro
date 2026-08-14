@@ -84,31 +84,36 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
     </section>
 
-    <!-- 3力 -->
+    <!-- HOPE 4力 -->
     <section>
-      <div class="flex items-center gap-3 mb-2">
-        <div class="inline-flex items-center gap-2 bg-hope-green-light text-hope-green text-xs font-semibold px-4 py-1.5 rounded-full tracking-widest uppercase">
-          希望教會獨特 3 力
-        </div>
+      <div class="inline-flex items-center gap-2 bg-hope-green-light text-hope-green text-xs font-semibold px-4 py-1.5 rounded-full tracking-widest uppercase mb-4">
+        希望教會生命影響力
       </div>
-      <h2 class="text-2xl font-bold text-gray-900 mb-2 mt-4">生命影響力 <span class="text-hope-green text-lg font-normal">Life Impact</span></h2>
+      <h2 class="text-3xl font-bold text-gray-900 mb-2 tracking-widest">
+        <span class="text-hope-green">H</span>OPE
+      </h2>
       <p class="text-gray-500 mb-8">希望教會不只是學習的地方，更是裝備每一個人的生命基地——讓你對家庭、職場、社會產生真實的正面影響力。</p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="p-6 bg-hope-green-light rounded-2xl">
-          <div class="text-2xl font-bold text-hope-green mb-1">領袖力</div>
-          <div class="text-sm font-medium text-hope-green-dark mb-3">領袖意識，發揮影響力</div>
-          <p class="text-gray-700 text-sm leading-relaxed">培養你看見可能、帶領他人的眼光與勇氣，讓你的生命成為周圍人的祝福與方向。</p>
-        </div>
-        <div class="p-6 bg-hope-green-light rounded-2xl">
-          <div class="text-2xl font-bold text-hope-green mb-1">關係力</div>
-          <div class="text-sm font-medium text-hope-green-dark mb-3">主動連結，擴大影響力</div>
-          <p class="text-gray-700 text-sm leading-relaxed">建立真實、深度的人際連結，讓愛的圈子不斷擴大，帶動更多人一起走向美好。</p>
-        </div>
-        <div class="p-6 bg-hope-green-light rounded-2xl">
-          <div class="text-2xl font-bold text-hope-green mb-1">教養力</div>
-          <div class="text-sm font-medium text-hope-green-dark mb-3">紮根真理，深化影響力</div>
-          <p class="text-gray-700 text-sm leading-relaxed">以聖經真理為根基，建造家庭與下一代，讓信仰的果實一代一代地傳承下去。</p>
-        </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        {[
+          { letter: 'H', en: 'Honor God',     zh: '榮神益人', force: '神給力', desc: '一切以榮耀神為首要，讓我們所做的每一件事都成為榮耀祂名的見證。' },
+          { letter: 'O', en: 'Open Hearts',   zh: '主動連結', force: '關係力', desc: '建立真實、深度的人際連結，讓愛的圈子不斷擴大，帶動更多人走向美好。' },
+          { letter: 'P', en: 'Plant Faith',   zh: '教養傳承', force: '教養力', desc: '以聖經真理為根基，建造家庭與下一代，讓信仰的果實一代一代傳承下去。' },
+          { letter: 'E', en: 'Equip Leaders', zh: '裝備賦能', force: '領袖力', desc: '培養看見可能、帶領他人的眼光與勇氣，讓你的生命成為周圍人的祝福與方向。' },
+        ].map(({ letter, en, zh, force, desc }) => (
+          <div class="flex gap-5 p-6 bg-hope-green-light rounded-2xl">
+            <div class="w-12 h-12 bg-hope-green rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+              <span class="text-white font-black text-xl">{letter}</span>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <span class="font-bold text-gray-900">{zh}</span>
+                <span class="text-hope-green font-semibold text-sm bg-white px-2 py-0.5 rounded-full">{force}</span>
+              </div>
+              <div class="text-xs text-hope-green-dark mb-2 font-medium">{en}</div>
+              <p class="text-gray-700 text-sm leading-relaxed">{desc}</p>
+            </div>
+          </div>
+        ))}
       </div>
       <p class="mt-6 text-center text-hope-green font-medium">「活出你的影響力、讓希望真實可見」</p>
     </section>
