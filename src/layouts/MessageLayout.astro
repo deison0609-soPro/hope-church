@@ -1,0 +1,196 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+export interface Props {
+  title: string;
+  date: string;
+  description?: string;
+  scripture?: string;
+  youtube?: string;
+}
+
+const { title, date, description, scripture, youtube } = Astro.props;
+
+function formatDate(dateStr: string) {
+  const d = new Date(dateStr);
+  return d.toLocaleDateString('zh-TW', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+
+// 把 youtu.be/xxx 或 youtube.com/watch?v=xxx 轉成 embed 網址
+function getYoutubeEmbedUrl(url?: string) {
+  if (!url) return null;
+  const shortMatch = url.match(/youtu\.be\/([\w-]+)/);
+  const longMatch = url.match(/[?&]v=([\w-]+)/);
+  const embedMatch = url.match(/youtube\.com\/embed\/([\w-]+)/);
+  const id = shortMatch?.[1] || longMatch?.[1] || embedMatch?.[1];
+  return id ? `https://www.youtube.com/embed/${id}` : null;
+}
+
+const embedUrl = getYoutubeEmbedUrl(youtube);
+---
+<BaseLayout title={title} description={description}>
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 py-12">
+    <a href="/pastor/messages" class="inline-flex items-center text-hope-green hover:text-hope-green-dark text-sm mb-8 transition-colors">
+      <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+      主日信息
+    </a>
+
+    <article>
+      <!-- 標題區 -->
+      <header class="mb-8">
+        <div class="flex flex-wrap items-center gap-3 mb-3">
+          <time class="text-sm text-gray-500">{formatDate(date)}</time>
+          {scripture && (
+            <span class="text-xs font-semibold text-hope-green bg-hope-green-light px-3 py-1 rounded-full">
+              {scripture}
+            </span>
+          )}
+        </div>
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 leading-snug">{title}</h1>
+        {description && <p class="mt-3 text-lg text-gray-500 leading-relaxed">{description}</p>}
+      </header>
+
+      <!-- 置頂講道影片 -->
+      {embedUrl && (
+        <div class="mb-10 rounded-2xl overflow-hidden shadow-lg bg-black" style="aspect-ratio: 16/9;">
+          <iframe
+            class="w-full h-full"
+            src={embedUrl}
+            title={`${title} 主日信息影片`}
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      )}
+
+      <div class="border-b border-gray-200 mb-10"></div>
+
+      <!-- 內文 -->
+      <div class="sermon-content">
+        <slot />
+      </div>
+    </article>
+  </div>
+</BaseLayout>
+
+<style is:global>
+  .sermon-content {
+    color: #374151; /* text-gray-700 */
+    font-size: 1.125rem; /* text-lg */
+    line-height: 1.9;
+  }
+
+  .sermon-content p {
+    margin-bottom: 1.75rem;
+  }
+
+  .sermon-content h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #3D7318; /* hope-green-dark */
+    margin-top: 3rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid #EEF7E6;
+  }
+  @media (min-width: 768px) {
+    .sermon-content h2 { font-size: 1.75rem; }
+  }
+
+  .sermon-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #111827;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .sermon-content strong {
+    color: #3D7318;
+    font-weight: 700;
+  }
+
+  .sermon-content a {
+    color: #5BA826;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .sermon-content a:hover {
+    color: #3D7318;
+  }
+
+  .sermon-content blockquote {
+    background: #EEF7E6;
+    border-left: 4px solid #5BA826;
+    border-radius: 0 0.75rem 0.75rem 0;
+    padding: 1.25rem 1.5rem;
+    margin: 2rem 0;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #374151;
+  }
+  .sermon-content blockquote p {
+    margin-bottom: 0.5rem;
+  }
+  .sermon-content blockquote p:last-child {
+    margin-bottom: 0;
+  }
+
+  .sermon-content hr {
+    border: none;
+    border-top: 2px solid #EEF7E6;
+    margin: 3rem 0;
+  }
+
+  .sermon-content ul,
+  .sermon-content ol {
+    margin: 1.5rem 0;
+    padding-left: 1.5rem;
+  }
+  .sermon-content ul { list-style: disc; }
+  .sermon-content ol { list-style: decimal; }
+  .sermon-content li {
+    margin-bottom: 0.5rem;
+  }
+
+  .sermon-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    font-size: 1rem;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+  .sermon-content thead {
+    background: #5BA826;
+  }
+  .sermon-content th {
+    color: white;
+    font-weight: 600;
+    text-align: left;
+    padding: 0.85rem 1rem;
+  }
+  .sermon-content td {
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid #EEF7E6;
+    background: #fff;
+  }
+  .sermon-content tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .sermon-content tbody tr:nth-child(even) td {
+    background: #F9FBF6;
+  }
+
+  @media (max-width: 640px) {
+    .sermon-content table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+  }
+</style>

@@ -17,6 +17,7 @@ const messagesCollection = defineCollection({
     date: z.string(),
     description: z.string().optional(),
     scripture: z.string().optional(),
+    youtube: z.string().optional(),
   }),
 });
 
