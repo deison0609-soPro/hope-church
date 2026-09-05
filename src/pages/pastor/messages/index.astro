@@ -25,18 +25,18 @@ function formatDate(dateStr: string) {
     </div>
   </div>
 
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-16">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16">
     {messages.length === 0 ? (
       <p class="text-gray-500 text-center py-12">目前尚無信息，請稍後再來。</p>
     ) : (
-      <div class="space-y-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         {messages.map((msg) => (
           <a
             href={`/pastor/messages/${msg.slug}`}
-            class="group flex flex-col sm:flex-row gap-0 sm:gap-6 bg-white rounded-2xl border border-gray-100 hover:border-hope-green hover:shadow-md transition-all duration-200 overflow-hidden"
+            class="group block bg-white rounded-2xl border border-gray-100 hover:border-hope-green hover:shadow-lg transition-all duration-200 overflow-hidden"
           >
             {msg.data.cover && (
-              <div class="sm:w-48 sm:flex-shrink-0 aspect-square overflow-hidden bg-gray-50">
+              <div class="aspect-square overflow-hidden bg-gray-50">
                 <img
                   src={msg.data.cover}
                   alt={`${msg.data.title} 主日信息圖卡`}
@@ -44,7 +44,7 @@ function formatDate(dateStr: string) {
                 />
               </div>
             )}
-            <div class="flex-1 p-6 sm:pl-0">
+            <div class="p-6">
               <time class="text-sm text-gray-500">{formatDate(msg.data.date)}</time>
               {msg.data.scripture && (
                 <p class="text-xs text-hope-green font-medium mt-0.5">{msg.data.scripture}</p>
