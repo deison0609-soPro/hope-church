@@ -33,24 +33,35 @@ function formatDate(dateStr: string) {
         {messages.map((msg) => (
           <a
             href={`/pastor/messages/${msg.slug}`}
-            class="group block bg-white rounded-2xl border border-gray-100 hover:border-hope-green hover:shadow-md transition-all duration-200 p-6"
+            class="group flex flex-col sm:flex-row gap-0 sm:gap-6 bg-white rounded-2xl border border-gray-100 hover:border-hope-green hover:shadow-md transition-all duration-200 overflow-hidden"
           >
-            <time class="text-sm text-gray-500">{formatDate(msg.data.date)}</time>
-            {msg.data.scripture && (
-              <p class="text-xs text-hope-green font-medium mt-0.5">{msg.data.scripture}</p>
+            {msg.data.cover && (
+              <div class="sm:w-48 sm:flex-shrink-0 aspect-square overflow-hidden bg-gray-50">
+                <img
+                  src={msg.data.cover}
+                  alt={`${msg.data.title} 主日信息圖卡`}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
             )}
-            <h2 class="mt-1 text-xl font-bold text-gray-900 group-hover:text-hope-green transition-colors">
-              {msg.data.title}
-            </h2>
-            {msg.data.description && (
-              <p class="mt-2 text-gray-600 text-sm leading-relaxed">{msg.data.description}</p>
-            )}
-            <span class="mt-4 inline-flex items-center text-hope-green text-sm font-medium">
-              閱讀信息
-              <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </span>
+            <div class="flex-1 p-6 sm:pl-0">
+              <time class="text-sm text-gray-500">{formatDate(msg.data.date)}</time>
+              {msg.data.scripture && (
+                <p class="text-xs text-hope-green font-medium mt-0.5">{msg.data.scripture}</p>
+              )}
+              <h2 class="mt-1 text-xl font-bold text-gray-900 group-hover:text-hope-green transition-colors">
+                {msg.data.title}
+              </h2>
+              {msg.data.description && (
+                <p class="mt-2 text-gray-600 text-sm leading-relaxed">{msg.data.description}</p>
+              )}
+              <span class="mt-4 inline-flex items-center text-hope-green text-sm font-medium">
+                閱讀信息
+                <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
+            </div>
           </a>
         ))}
       </div>
