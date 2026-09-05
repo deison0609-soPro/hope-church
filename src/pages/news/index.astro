@@ -20,29 +20,40 @@ function formatDate(dateStr: string) {
     </div>
   </div>
 
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-16">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16">
     {posts.length === 0 ? (
       <p class="text-gray-500 text-center py-12">目前沒有消息，請稍後再來。</p>
     ) : (
-      <div class="space-y-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         {posts.map((post) => (
           <a
             href={`/news/${post.slug}`}
-            class="group block bg-white rounded-2xl border border-gray-100 hover:border-hope-green hover:shadow-md transition-all duration-200 p-6"
+            class="group block bg-white rounded-2xl border border-gray-100 hover:border-hope-green hover:shadow-lg transition-all duration-200 overflow-hidden"
           >
-            <time class="text-sm text-gray-500">{formatDate(post.data.date)}</time>
-            <h2 class="mt-1 text-xl font-bold text-gray-900 group-hover:text-hope-green transition-colors">
-              {post.data.title}
-            </h2>
-            {post.data.description && (
-              <p class="mt-2 text-gray-600 text-sm leading-relaxed line-clamp-2">{post.data.description}</p>
+            {post.data.cover && (
+              <div class="aspect-square overflow-hidden bg-gray-50">
+                <img
+                  src={post.data.cover}
+                  alt={post.data.title}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
             )}
-            <span class="mt-4 inline-flex items-center text-hope-green text-sm font-medium">
-              閱讀全文
-              <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </span>
+            <div class="p-6">
+              <time class="text-sm text-gray-500">{formatDate(post.data.date)}</time>
+              <h2 class="mt-1 text-xl font-bold text-gray-900 group-hover:text-hope-green transition-colors">
+                {post.data.title}
+              </h2>
+              {post.data.description && (
+                <p class="mt-2 text-gray-600 text-sm leading-relaxed line-clamp-2">{post.data.description}</p>
+              )}
+              <span class="mt-4 inline-flex items-center text-hope-green text-sm font-medium">
+                閱讀全文
+                <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
+            </div>
           </a>
         ))}
       </div>

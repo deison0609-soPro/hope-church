@@ -7,6 +7,7 @@ const newsCollection = defineCollection({
     date: z.string(),
     description: z.string().optional(),
     cover: z.string().optional(),
+    signupForm: z.boolean().optional(),
   }),
 });
 
