@@ -26,7 +26,7 @@ const groups = [
     name: '政億小組',
     leader: '政億',
     desc: '年輕人與年輕夫妻的組合，讓青春的火花在此點燃，陪伴你從單身進入已婚，陪你的家庭更加美滿。有基督的愛使一切夢想都將變成可能！',
-    time: '週日下午 12:30–14:00',
+    time: '週五晚上 19:40–21:10',
     tag: '年輕夫妻',
     color: 'bg-orange-50 border-orange-200',
     tagColor: 'bg-orange-100 text-orange-700',
@@ -56,7 +56,7 @@ const groups = [
     name: '主豪小組',
     leader: '主豪',
     desc: '充滿著愛和年輕活力，彼此關心和支持，相互分享生活的點滴，建立了深厚的友誼！並相信上帝的引導和祝福，給予我們方向和力量，是一個充滿溫暖、希望和愛的小組。',
-    time: '週二晚上 19:40–21:10',
+    time: '週五晚上 19:40–21:10',
     tag: '年輕有愛',
     color: 'bg-green-50 border-green-200',
     tagColor: 'bg-green-100 text-green-700',
@@ -85,11 +85,11 @@ const groups = [
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {groups.map((group) => (
           <div class={`rounded-2xl border overflow-hidden ${group.color}`}>
-            <div class="h-48 overflow-hidden">
+            <div class="h-72 sm:h-80 overflow-hidden">
               <img
                 src={group.photo}
                 alt={`${group.name}合照`}
-                class="w-full h-full object-cover"
+                class="w-full h-full object-cover object-top"
               />
             </div>
             <div class="p-6">
@@ -157,10 +157,10 @@ const groups = [
             <option value="">請選擇</option>
             <option value="柯哥小組">柯哥小組（週四 19:30）</option>
             <option value="德松小組">德松小組（週五 20:00）</option>
-            <option value="政億小組">政億小組（週日 12:30）</option>
+            <option value="政億小組">政億小組（週五 19:40）</option>
             <option value="士倚小組">士倚小組（週四 19:40）</option>
             <option value="聖閔小組">聖閔小組（週五 19:40）</option>
-            <option value="主豪小組">主豪小組（週二 19:40）</option>
+            <option value="主豪小組">主豪小組（週五 19:40）</option>
           </select>
         </div>
         <div>
