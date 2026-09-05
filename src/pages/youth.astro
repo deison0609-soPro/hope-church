@@ -1,12 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="未來領袖" description="台中希望教會青少年事工——青少年就是未來的領袖">
+<BaseLayout title="未來領袖" description="台中希望教會青少年事工——陪孩子培養品格、溝通力、情緒管理與領袖特質，成為面對未來世界的預備">
 
   <div class="bg-hope-green-light border-b border-green-100">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
       <h1 class="text-3xl md:text-4xl font-bold text-gray-900">未來領袖</h1>
-      <p class="mt-2 text-gray-600">青少年事工</p>
+      <p class="mt-2 text-gray-600">青少年成長基地</p>
     </div>
   </div>
 
@@ -15,48 +15,56 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <!-- Hero message -->
     <section class="text-center">
       <div class="inline-block bg-hope-green text-white text-sm font-medium px-4 py-1.5 rounded-full mb-6">
-        青少年事工
+        國高中青少年事工
       </div>
       <h2 class="text-3xl md:text-4xl font-bold text-gray-900 leading-snug mb-6">
-        青少年就是<br />未來的領袖
+        比起分數，<br />我們更想陪孩子準備好「自己」
       </h2>
       <p class="text-lg text-gray-600 leading-relaxed max-w-xl mx-auto">
-        機會是給預備好的人<br />
-        不沉迷於徬徨的世代
+        這個世界變化得比想像中快，未來會需要什麼樣的人才，沒有人說得準。
+        但有些能力永遠不會退流行——好的品格、清楚表達自己的能力、
+        面對挫折不放棄的韌性，還有與人合作的智慧。
       </p>
     </section>
 
     <!-- 核心信念 -->
     <section class="bg-hope-green rounded-2xl p-10 text-center">
       <p class="text-2xl font-medium text-white leading-relaxed">
-        靠著耶穌，<br />就有勇敢追夢的勇氣與實力
+        我們相信每個孩子都有無限可能，<br />
+        只要有人願意陪他，一步步找到屬於自己的方向與力量。
       </p>
     </section>
 
     <!-- 呼召 -->
     <section class="text-center space-y-6">
-      <h2 class="text-2xl font-bold text-gray-900">你家裡也有青少年嗎？</h2>
-      <p class="text-lg text-gray-600 leading-relaxed">
-        Come! Follow US!<br />
-        快來加入青少小組<br />
-        一起成為最有活力的下一代
+      <h2 class="text-2xl font-bold text-gray-900">你家也有正在長大的孩子嗎？</h2>
+      <p class="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
+        國高中是價值觀定型最關鍵的幾年。與其讓孩子自己摸索、被手機和演算法牽著走，
+        不如讓他在一群同齡夥伴、加上用心陪伴的大哥哥大姐姐帶領下，
+        一起玩、一起學、一起犯錯、一起成長。
       </p>
       <p class="text-xl font-bold text-hope-green">
-        成為下一世代的頂尖領袖
+        Come! Follow US! 快來加入青少小組
       </p>
     </section>
 
     <!-- 特色 -->
     <section>
-      <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">在未來領袖，你將得到</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <h2 class="text-2xl font-bold text-gray-900 mb-2 text-center">在這裡，孩子會練習到</h2>
+      <p class="text-gray-500 text-center mb-8 max-w-xl mx-auto">
+        不是上課考試，而是在真實的相處與活動中，一點一滴累積起來
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
         {[
-          { emoji: '🔥', title: '屬靈的火焰', desc: '在信仰中找到方向，活出有意義、有熱情的青春' },
-          { emoji: '👫', title: '真實的友誼', desc: '與同齡的朋友一起成長，建立深厚且純正的友誼' },
-          { emoji: '🦁', title: '領袖的裝備', desc: '培養品格與能力，成為這個世代真正的領袖' },
+          { emoji: '🌱', title: '品格教育', desc: '誠實、負責、感恩不是背下來的口號，而是在每週的相處和服事中，一次次練習出來的習慣。' },
+          { emoji: '💡', title: '創新發現', desc: '鼓勵孩子多問「為什麼」，透過討論、企劃、動手做，練習用不同角度看問題、找答案。' },
+          { emoji: '🗣️', title: '溝通表達力', desc: '從小組分享、上台帶領到團隊討論，讓孩子練習把心裡的想法，清楚、有自信地說出來。' },
+          { emoji: '🌊', title: '情緒管理', desc: '青春期情緒起伏本來就大。我們陪孩子認識自己的情緒，學習好好表達，而不是壓抑或爆發。' },
+          { emoji: '🤝', title: '團隊合作', desc: '透過小組活動與服事分工，讓孩子在真實互動中學會聆聽、協調、也學會信任隊友。' },
+          { emoji: '👫', title: '真實的陪伴', desc: '一群願意說真心話的同齡朋友，加上穩定用心的大哥哥大姐姐，成為孩子成長路上的後盾。' },
         ].map((item) => (
-          <div class="text-center p-6 bg-gray-50 rounded-xl">
-            <span class="text-4xl block mb-4">{item.emoji}</span>
+          <div class="p-6 bg-gray-50 rounded-xl hover:shadow-md transition-shadow">
+            <span class="text-3xl block mb-3">{item.emoji}</span>
             <h3 class="font-bold text-gray-900 mb-2">{item.title}</h3>
             <p class="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
           </div>
@@ -66,8 +74,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     <!-- CTA -->
     <section class="text-center bg-hope-green-light rounded-2xl p-10">
-      <h2 class="text-2xl font-bold text-gray-900 mb-3">準備好加入了嗎？</h2>
-      <p class="text-gray-600 mb-8">歡迎聯絡我們，讓你的孩子找到最好的成長環境</p>
+      <h2 class="text-2xl font-bold text-gray-900 mb-3">準備好讓孩子加入了嗎？</h2>
+      <p class="text-gray-600 mb-8">歡迎聯絡我們，讓孩子在這裡找到最好的成長環境</p>
       <a href="/contact" class="inline-flex items-center px-8 py-3 bg-hope-green text-white font-semibold rounded-full hover:bg-hope-green-dark transition-colors">
         聯絡我們
         <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
