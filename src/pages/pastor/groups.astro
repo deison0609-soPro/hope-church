@@ -10,6 +10,7 @@ const groups = [
     tag: '銀髮族',
     color: 'bg-purple-50 border-purple-200',
     tagColor: 'bg-purple-100 text-purple-700',
+    photo: '/images/groups/kege.jpg',
   },
   {
     name: '德松小組',
@@ -19,6 +20,7 @@ const groups = [
     tag: '壯年族',
     color: 'bg-blue-50 border-blue-200',
     tagColor: 'bg-blue-100 text-blue-700',
+    photo: '/images/groups/desong.jpg',
   },
   {
     name: '政億小組',
@@ -28,6 +30,7 @@ const groups = [
     tag: '年輕夫妻',
     color: 'bg-orange-50 border-orange-200',
     tagColor: 'bg-orange-100 text-orange-700',
+    photo: '/images/groups/zhengyi.jpg',
   },
   {
     name: '士倚小組',
@@ -37,6 +40,7 @@ const groups = [
     tag: '年輕活力',
     color: 'bg-yellow-50 border-yellow-200',
     tagColor: 'bg-yellow-100 text-yellow-700',
+    photo: '/images/groups/shiyi.jpg',
   },
   {
     name: '聖閔小組',
@@ -46,6 +50,7 @@ const groups = [
     tag: '溫馨包容',
     color: 'bg-pink-50 border-pink-200',
     tagColor: 'bg-pink-100 text-pink-700',
+    photo: '/images/groups/shengmin.jpg',
   },
   {
     name: '主豪小組',
@@ -55,6 +60,7 @@ const groups = [
     tag: '年輕有愛',
     color: 'bg-green-50 border-green-200',
     tagColor: 'bg-green-100 text-green-700',
+    photo: '/images/groups/zhuhao.jpg',
   },
 ];
 ---
@@ -78,19 +84,28 @@ const groups = [
     <section>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {groups.map((group) => (
-          <div class={`rounded-2xl border p-6 ${group.color}`}>
-            <div class="flex items-start justify-between mb-3">
-              <h3 class="text-xl font-bold text-gray-900">{group.name}</h3>
-              <span class={`text-xs font-medium px-2.5 py-1 rounded-full flex-shrink-0 ml-2 ${group.tagColor}`}>
-                {group.tag}
-              </span>
+          <div class={`rounded-2xl border overflow-hidden ${group.color}`}>
+            <div class="h-48 overflow-hidden">
+              <img
+                src={group.photo}
+                alt={`${group.name}合照`}
+                class="w-full h-full object-cover"
+              />
             </div>
-            <p class="text-gray-700 text-sm leading-relaxed mb-4">{group.desc}</p>
-            <div class="flex items-center gap-2 text-sm text-gray-600">
-              <svg class="w-4 h-4 text-hope-green flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <span class="font-medium">{group.time}</span>
+            <div class="p-6">
+              <div class="flex items-start justify-between mb-3">
+                <h3 class="text-xl font-bold text-gray-900">{group.name}</h3>
+                <span class={`text-xs font-medium px-2.5 py-1 rounded-full flex-shrink-0 ml-2 ${group.tagColor}`}>
+                  {group.tag}
+                </span>
+              </div>
+              <p class="text-gray-700 text-sm leading-relaxed mb-4">{group.desc}</p>
+              <div class="flex items-center gap-2 text-sm text-gray-600">
+                <svg class="w-4 h-4 text-hope-green flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span class="font-medium">{group.time}</span>
+              </div>
             </div>
           </div>
         ))}
