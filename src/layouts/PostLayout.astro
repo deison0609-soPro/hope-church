@@ -26,7 +26,7 @@ function formatDate(dateStr: string) {
   return d.toLocaleDateString('zh-TW', { year: 'numeric', month: 'long', day: 'numeric' });
 }
 ---
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} image={cover}>
   <div class="max-w-3xl mx-auto px-4 sm:px-6 py-12">
     <a href={backLink} class="inline-flex items-center text-hope-green hover:text-hope-green-dark text-sm mb-8 transition-colors">
       <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">

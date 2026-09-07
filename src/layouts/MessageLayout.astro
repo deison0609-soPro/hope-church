@@ -7,9 +7,10 @@ export interface Props {
   description?: string;
   scripture?: string;
   youtube?: string;
+  cover?: string;
 }
 
-const { title, date, description, scripture, youtube } = Astro.props;
+const { title, date, description, scripture, youtube, cover } = Astro.props;
 
 function formatDate(dateStr: string) {
   const d = new Date(dateStr);
@@ -28,7 +29,7 @@ function getYoutubeEmbedUrl(url?: string) {
 
 const embedUrl = getYoutubeEmbedUrl(youtube);
 ---
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} image={cover}>
   <div class="max-w-3xl mx-auto px-4 sm:px-6 py-12">
     <a href="/pastor/messages" class="inline-flex items-center text-hope-green hover:text-hope-green-dark text-sm mb-8 transition-colors">
       <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
