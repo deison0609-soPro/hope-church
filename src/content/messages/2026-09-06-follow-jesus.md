@@ -3,6 +3,7 @@ title: 跟著耶穌學生活——學習把人生方向盤交給神
 date: "2026-09-06"
 description: 我們是天國子民——先求神的國和神的義。從先後次序、尊神為聖、神國降臨三個層面，看見天國子民的特權與呼召
 scripture: 馬太福音 6:33
+youtube: https://youtu.be/6sbBH6MEuvw
 cover: /images/messages/2026-09-06-follow-jesus.png
 ---
 
