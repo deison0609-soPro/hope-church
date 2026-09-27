@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="兒童主日學" description="台中希望教會兒童主日學——舒服涼爽的教室、免費點心、好玩的活動，帶孩子一起認識耶穌">
+
+  <!-- Hero -->
+  <section class="bg-blue-50 border-b border-blue-100 overflow-hidden">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-16 md:py-20">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div class="text-center md:text-left">
+          <div class="inline-flex items-center gap-2 bg-white text-blue-500 text-sm font-medium px-5 py-2 rounded-full mb-6 shadow-sm">
+            <span>🙌</span>
+            <span>兒童主日學</span>
+          </div>
+          <h1 class="text-3xl md:text-4xl font-bold text-gray-900 leading-snug mb-4">
+            走呀！<br />
+            <span class="text-blue-500">來兒主呀～</span>
+          </h1>
+          <p class="text-lg text-gray-600 leading-relaxed">
+            舒服涼爽的教室、一起玩的好朋友、聽不完的耶穌故事——
+            每個星期天，我們都在這裡等你。
+          </p>
+        </div>
+        <div class="rounded-3xl overflow-hidden shadow-lg">
+          <img src="/images/kids/group-photo.jpg" alt="兒童主日學師生大合照" class="w-full h-full object-cover" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 特色 -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <h2 class="text-2xl font-bold text-gray-900 mb-2 text-center">在兒主，會發生這些事</h2>
+      <p class="text-gray-500 text-center mb-10 max-w-xl mx-auto">
+        每個星期天早上，都有這麼多開心的理由
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        {[
+          { emoji: '🙋', title: '彼此認識', desc: '大家圍在一起打招呼，舉手發言就加分，越勇敢說話點數越多！' },
+          { emoji: '📵', title: '不滑手機', desc: '這裡不玩 3C，眼睛好好的，大家可以專心上課、專心聽故事。' },
+          { emoji: '❄️', title: '免費冷氣', desc: '教室涼涼的、舒舒服服，不會滿身汗、不會黏答答。' },
+          { emoji: '🍪', title: '免費點心', desc: '有餅乾、有飲料，吃得開開心心，不會肚子餓。' },
+        ].map((item) => (
+          <div class="p-6 bg-blue-50 rounded-2xl hover:shadow-md transition-shadow">
+            <span class="text-3xl block mb-3">{item.emoji}</span>
+            <h3 class="font-bold text-gray-900 mb-2">{item.title}</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 聽故事：認識耶穌 -->
+  <section class="py-16 md:py-20 bg-blue-500">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+      <span class="text-4xl block mb-6">📖</span>
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">聽故事，認識耶穌</h2>
+      <p class="text-blue-50 text-lg leading-relaxed max-w-xl mx-auto">
+        每個星期，我們都會講耶穌的故事給孩子聽。
+        讓他們開開心心知道耶穌是誰——
+        祂是又真又活的神，會聽我們禱告、會幫助我們。
+      </p>
+      <p class="text-white font-semibold text-xl mt-6">
+        很幸福，很順利，因為有神同在
+      </p>
+    </div>
+  </section>
+
+  <!-- 邀請語 -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">歡迎你來認識神</h2>
+      <p class="text-gray-600 text-lg leading-relaxed mb-4">
+        讓你知道耶穌是誰——好玩的活動、免費 DIY 體驗，通通都有！
+      </p>
+      <p class="text-gray-700 leading-relaxed max-w-xl mx-auto">
+        歡迎你來這裡，可以跟耶穌親近，交到許多好朋友，
+        一起學習彼此相愛，學習更好的品格。
+      </p>
+      <p class="text-blue-500 font-bold text-2xl mt-8">
+        走呀！來兒主呀～
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 md:py-20 bg-blue-50">
+    <div class="max-w-xl mx-auto px-4 sm:px-6 text-center">
+      <h2 class="text-2xl font-bold text-gray-900 mb-3">準備好帶孩子一起來了嗎？</h2>
+      <p class="text-gray-600 mb-8 leading-relaxed">
+        每個星期天，我們都在這裡等你和孩子一起來
+      </p>
+      <a href="/contact"
+        class="inline-flex items-center px-10 py-4 bg-blue-500 text-white font-semibold rounded-full hover:bg-blue-600 transition-colors shadow-lg shadow-blue-200">
+        聯絡我們
+        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>
