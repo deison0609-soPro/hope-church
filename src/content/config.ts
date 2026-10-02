@@ -19,6 +19,7 @@ const messagesCollection = defineCollection({
     description: z.string().optional(),
     scripture: z.string().optional(),
     youtube: z.string().optional(),
+    audio: z.string().optional(),
     cover: z.string().optional(),
   }),
 });

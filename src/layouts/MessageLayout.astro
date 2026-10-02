@@ -7,10 +7,11 @@ export interface Props {
   description?: string;
   scripture?: string;
   youtube?: string;
+  audio?: string;
   cover?: string;
 }
 
-const { title, date, description, scripture, youtube, cover } = Astro.props;
+const { title, date, description, scripture, youtube, audio, cover } = Astro.props;
 
 function formatDate(dateStr: string) {
   const d = new Date(dateStr);
@@ -64,6 +65,17 @@ const embedUrl = getYoutubeEmbedUrl(youtube);
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen
           ></iframe>
+        </div>
+      )}
+
+      <!-- 主日信息音檔（沒有影片時使用） -->
+      {audio && !embedUrl && (
+        <div class="mb-10 rounded-2xl bg-hope-green-light p-5 sm:p-6">
+          <p class="text-sm font-semibold text-hope-green-dark mb-3">🎧 聆聽主日信息</p>
+          <audio controls preload="none" class="w-full" src={audio}>
+            您的瀏覽器不支援音檔播放，
+            <a href={audio}>請點此下載</a>。
+          </audio>
         </div>
       )}
 
