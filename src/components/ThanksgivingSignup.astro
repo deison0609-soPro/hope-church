@@ -1,0 +1,263 @@
+---
+// 2026 感恩餐會報名表單：菜單照片＋多人報名＋便當選擇＋費用試算
+// 送出走和其他活動同一個 Formspree 表單端點，欄位會整理成文字，方便收件時直接統計便當數量
+const meals = [
+  { name: '日式炸豬排', img: '' },
+  { name: '檸檬蒜香豬', img: '/images/news/thanksgiving-2026/lemon-garlic-pork.jpg' },
+  { name: '酒香花雕雞', img: '/images/news/thanksgiving-2026/huadiao-wine-chicken.jpg' },
+  { name: '蔥鹽香嫩雞', img: '/images/news/thanksgiving-2026/scallion-salt-chicken.jpg' },
+  { name: '蔥爆沙朗牛', img: '/images/news/thanksgiving-2026/scallion-sirloin-beef.jpg' },
+  { name: '松阪豬＋鱸魚雙拼', img: '/images/news/thanksgiving-2026/seabass-matsusaka-pork.jpg' },
+  { name: '松阪豬＋雞腿雙拼', img: '' },
+  { name: '三杯杏鮑菇（素）', img: '' },
+];
+const groups = ['柯哥小組', '德松小組', '政億小組', '士倚小組', '聖閔小組', '主豪小組', '還沒有固定小組／朋友'];
+const title = '希望教會中的感恩餐會報名';
+---
+
+<section id="thanksgiving-signup" class="mt-14">
+  <!-- 便當菜單 -->
+  <div class="mb-12">
+    <h2 class="text-2xl font-bold text-hope-green-dark mb-2 pb-2 border-b-2 border-hope-green-light">🍱 感恩節便當選項</h2>
+    <p class="text-gray-600 text-sm mb-6">共 8 款，每人選 1 款。報名時直接在下方表單選擇。</p>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      {meals.map((m) => (
+        <div class="rounded-xl overflow-hidden border border-gray-100 bg-white shadow-sm">
+          {m.img ? (
+            <img src={m.img} alt={m.name} loading="lazy" class="w-full h-32 md:h-36 object-cover" style="margin:0; border-radius:0; box-shadow:none;" />
+          ) : (
+            <div class="w-full h-32 md:h-36 bg-hope-green-light flex items-center justify-center text-4xl">🍱</div>
+          )}
+          <p class="px-3 py-2 text-center text-sm font-semibold text-gray-800">{m.name}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- 費用說明 -->
+  <div class="mb-12 bg-hope-green-light rounded-2xl p-6 md:p-8">
+    <h2 class="text-xl font-bold text-hope-green-dark mb-4">💰 感恩節費用</h2>
+    <ul class="space-y-2 text-gray-700 text-base leading-relaxed list-disc pl-5">
+      <li><strong>大人：</strong>$300／位</li>
+      <li><strong>小孩：</strong>由希望教會補助麥當勞餐點。若要跟大人一樣吃便當，需付 $300 並填單</li>
+      <li>請爸爸媽媽事先和小孩溝通，要吃便當還是麥當勞</li>
+      <li>小孩如果選麥當勞，只要填寫姓名，不用選便當</li>
+      <li>小組有針對餐費補助，請洽各小組長或鳳梅師母</li>
+    </ul>
+  </div>
+
+  <!-- 報名表單 -->
+  <div class="bg-gray-50 rounded-2xl p-6 md:p-10">
+    <div class="text-center mb-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-2">立即報名</h2>
+      <p class="text-gray-600 text-sm">一次可以幫全家報名。先填你的資料，再新增每位參加的大人和小孩</p>
+    </div>
+
+    <div id="tg-success" class="hidden bg-hope-green-light border border-hope-green rounded-xl p-6 text-center">
+      <div class="text-4xl mb-3">🙏</div>
+      <h3 class="text-lg font-bold text-hope-green-dark mb-1">報名成功！</h3>
+      <p class="text-gray-600 text-sm">我們已收到你的報名資料，感恩餐會見！</p>
+    </div>
+
+    <form id="tg-form" action="https://formspree.io/f/meajkbbq" method="POST" class="space-y-6">
+      <input type="hidden" name="報名活動" value={title} />
+      <input type="hidden" name="_subject" value="【感恩餐會報名】" />
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none" />
+
+      <div class="grid md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">報名人姓名 <span class="text-red-500">*</span></label>
+          <input type="text" name="報名人姓名" required
+            class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-hope-green focus:border-transparent transition bg-white" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">聯絡電話 <span class="text-red-500">*</span></label>
+          <input type="tel" name="電話" required
+            class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-hope-green focus:border-transparent transition bg-white" />
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">所屬小組</label>
+        <select name="小組"
+          class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-hope-green focus:border-transparent transition bg-white">
+          <option value="">請選擇</option>
+          {groups.map((g) => <option value={g}>{g}</option>)}
+        </select>
+      </div>
+
+      <div>
+        <p class="block text-sm font-medium text-gray-700 mb-2">參加的人與便當 <span class="text-red-500">*</span></p>
+        <div id="tg-people" class="space-y-3"></div>
+        <div class="flex flex-wrap gap-3 mt-3">
+          <button type="button" id="tg-add-adult"
+            class="px-4 py-2 text-sm font-semibold rounded-full border-2 border-hope-green text-hope-green-dark bg-white hover:bg-hope-green-light transition-colors">＋ 新增大人</button>
+          <button type="button" id="tg-add-child"
+            class="px-4 py-2 text-sm font-semibold rounded-full border-2 border-hope-green text-hope-green-dark bg-white hover:bg-hope-green-light transition-colors">＋ 新增小孩</button>
+        </div>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-xl p-4 text-sm text-gray-700">
+        <p>目前參加：<strong id="tg-count">0 位</strong></p>
+        <p class="mt-1">應繳餐費：<strong id="tg-total" class="text-hope-green-dark text-lg">$0</strong></p>
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">備註（飲食禁忌、過敏、其他想讓我們知道的）</label>
+        <textarea name="備註" rows="3"
+          class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-hope-green focus:border-transparent transition resize-none bg-white"></textarea>
+      </div>
+
+      <!-- 送出時由下方 script 整理成文字 -->
+      <input type="hidden" name="參加名單" id="tg-list" />
+      <input type="hidden" name="便當統計" id="tg-tally" />
+      <input type="hidden" name="大人人數" id="tg-adults" />
+      <input type="hidden" name="小孩人數" id="tg-kids" />
+      <input type="hidden" name="應繳餐費" id="tg-fee" />
+
+      <p id="tg-error" class="hidden text-sm text-red-600"></p>
+
+      <button type="submit" id="tg-submit"
+        class="w-full py-3 bg-hope-green text-white font-semibold rounded-lg hover:bg-hope-green-dark transition-colors">
+        送出報名
+      </button>
+    </form>
+  </div>
+</section>
+
+<script define:vars={{ meals: meals.map((m) => m.name) }}>
+  const PRICE = 300;
+  const form = document.getElementById('tg-form');
+  const peopleBox = document.getElementById('tg-people');
+  const errorBox = document.getElementById('tg-error');
+  let seq = 0;
+
+  function mealOptions(isChild) {
+    let html = '<option value="">請選擇便當</option>';
+    if (isChild) {
+      html = '<option value="">請選擇</option><option value="MCD">麥當勞（教會補助，免費）</option>';
+    }
+    meals.forEach((m) => {
+      const label = isChild ? '便當：' + m + '（$300）' : m;
+      html += '<option value="' + m + '">' + label + '</option>';
+    });
+    return html;
+  }
+
+  function addPerson(type) {
+    const isChild = type === 'child';
+    seq += 1;
+    const row = document.createElement('div');
+    row.className = 'tg-row bg-white border border-gray-200 rounded-xl p-4';
+    row.dataset.type = type;
+    row.innerHTML =
+      '<div class="flex items-center justify-between mb-3">' +
+      '<span class="text-sm font-semibold ' + (isChild ? 'text-orange-600' : 'text-hope-green-dark') + '">' + (isChild ? '小孩' : '大人') + '</span>' +
+      '<button type="button" class="tg-remove text-xs text-gray-400 hover:text-red-500">移除</button></div>' +
+      '<div class="grid md:grid-cols-2 gap-3">' +
+      '<input type="text" class="tg-name w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-hope-green" placeholder="姓名" />' +
+      '<select class="tg-meal w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-hope-green">' + mealOptions(isChild) + '</select>' +
+      '</div>';
+    peopleBox.appendChild(row);
+    update();
+  }
+
+  function rows() {
+    return Array.from(peopleBox.querySelectorAll('.tg-row'));
+  }
+
+  function fee(row) {
+    const type = row.dataset.type;
+    const meal = row.querySelector('.tg-meal').value;
+    if (type === 'child') return meal && meal !== 'MCD' ? PRICE : 0;
+    return PRICE;
+  }
+
+  function update() {
+    const rs = rows();
+    document.getElementById('tg-count').textContent = rs.length + ' 位';
+    document.getElementById('tg-total').textContent = '$' + rs.reduce((s, r) => s + fee(r), 0).toLocaleString();
+  }
+
+  peopleBox.addEventListener('change', update);
+  peopleBox.addEventListener('click', (e) => {
+    if (e.target.classList.contains('tg-remove')) {
+      e.target.closest('.tg-row').remove();
+      update();
+    }
+  });
+  document.getElementById('tg-add-adult').addEventListener('click', () => addPerson('adult'));
+  document.getElementById('tg-add-child').addEventListener('click', () => addPerson('child'));
+
+  addPerson('adult');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    errorBox.classList.add('hidden');
+    const rs = rows();
+    if (rs.length === 0) {
+      errorBox.textContent = '請至少新增一位參加的人';
+      errorBox.classList.remove('hidden');
+      return;
+    }
+    const lines = [];
+    const tally = {};
+    let adults = 0, kids = 0, mcd = 0, total = 0;
+    for (let i = 0; i < rs.length; i++) {
+      const r = rs[i];
+      const type = r.dataset.type;
+      const name = r.querySelector('.tg-name').value.trim();
+      const meal = r.querySelector('.tg-meal').value;
+      if (!name || !meal) {
+        errorBox.textContent = '第 ' + (i + 1) + ' 位請填姓名並選擇餐點';
+        errorBox.classList.remove('hidden');
+        r.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+      if (type === 'child') {
+        kids += 1;
+        if (meal === 'MCD') {
+          mcd += 1;
+          lines.push('小孩｜' + name + '｜麥當勞（教會補助）');
+        } else {
+          tally[meal] = (tally[meal] || 0) + 1;
+          lines.push('小孩｜' + name + '｜便當：' + meal + '（付費 $300）');
+        }
+      } else {
+        adults += 1;
+        tally[meal] = (tally[meal] || 0) + 1;
+        lines.push('大人｜' + name + '｜' + meal);
+      }
+      total += fee(r);
+    }
+    const tallyText = Object.keys(tally).map((k) => k + ' x' + tally[k]).join('、') + (mcd ? '、麥當勞（小孩）x' + mcd : '');
+    document.getElementById('tg-list').value = lines.join('\n');
+    document.getElementById('tg-tally').value = tallyText;
+    document.getElementById('tg-adults').value = String(adults);
+    document.getElementById('tg-kids').value = String(kids);
+    document.getElementById('tg-fee').value = '$' + total;
+
+    const btn = document.getElementById('tg-submit');
+    btn.disabled = true;
+    btn.textContent = '送出中…';
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
+      });
+      if (res.ok) {
+        form.classList.add('hidden');
+        document.getElementById('tg-success').classList.remove('hidden');
+        document.getElementById('tg-success').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        throw new Error('bad status');
+      }
+    } catch (err) {
+      errorBox.textContent = '送出失敗，請稍後再試，或加入官方 LINE@ 告訴我們';
+      errorBox.classList.remove('hidden');
+      btn.disabled = false;
+      btn.textContent = '送出報名';
+    }
+  });
+</script>

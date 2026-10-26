@@ -1,12 +1,13 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import ThanksgivingSignup from '../components/ThanksgivingSignup.astro';
 
 export interface Props {
   title: string;
   date: string;
   description?: string;
   cover?: string;
-  signupForm?: boolean;
+  signupForm?: boolean | 'thanksgiving';
   backLink?: string;
   backLabel?: string;
 }
@@ -56,8 +57,11 @@ function formatDate(dateStr: string) {
         <slot />
       </div>
 
+      <!-- 選用：感恩餐會專用報名（菜單＋多人報名＋便當） -->
+      {signupForm === 'thanksgiving' && <ThanksgivingSignup />}
+
       <!-- 選用：活動報名表單 -->
-      {signupForm && (
+      {signupForm === true && (
         <div class="mt-14 bg-gray-50 rounded-2xl p-8 md:p-10">
           <div class="text-center mb-8">
             <h2 class="text-xl font-bold text-gray-900 mb-2">立即報名這場活動</h2>
