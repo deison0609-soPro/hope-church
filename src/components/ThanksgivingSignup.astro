@@ -8,8 +8,7 @@ const meals = [
   { name: '蔥鹽香嫩雞', img: '/images/news/thanksgiving-2026/scallion-salt-chicken.jpg' },
   { name: '蔥爆沙朗牛', img: '/images/news/thanksgiving-2026/scallion-sirloin-beef.jpg' },
   { name: '松阪豬＋鱸魚雙拼', img: '/images/news/thanksgiving-2026/seabass-matsusaka-pork.jpg' },
-  { name: '松阪豬＋雞腿雙拼', img: '' },
-  { name: '三杯杏鮑菇（素）', img: '' },
+  { name: '三杯杏鮑菇（素食）', img: '/images/news/thanksgiving-2026/three-cup-king-oyster.jpg' },
 ];
 const groups = ['柯哥小組', '德松小組', '政億小組', '士倚小組', '聖閔小組', '主豪小組', '還沒有固定小組／朋友'];
 const title = '希望教會中的感恩餐會報名';
@@ -19,7 +18,7 @@ const title = '希望教會中的感恩餐會報名';
   <!-- 便當菜單 -->
   <div class="mb-12">
     <h2 class="text-2xl font-bold text-hope-green-dark mb-2 pb-2 border-b-2 border-hope-green-light">🍱 特選餐盒選項</h2>
-    <p class="text-gray-600 text-sm mb-6">共 8 款，每人選 1 款。報名時直接在下方表單選擇。</p>
+    <p class="text-gray-600 text-sm mb-6">共 7 款，每人選 1 款。報名時直接在下方表單選擇。</p>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
       {meals.map((m) => (
         <div class="rounded-xl overflow-hidden border border-gray-100 bg-white shadow-sm">
@@ -39,7 +38,7 @@ const title = '希望教會中的感恩餐會報名';
     <h2 class="text-xl font-bold text-hope-green-dark mb-4">💰 感恩節費用</h2>
     <ul class="space-y-2 text-gray-700 text-base leading-relaxed list-disc pl-5">
       <li><strong>大人：</strong>$300／位</li>
-      <li><strong>繳費方式：</strong>現金繳費，或交給邀請你的人代收</li>
+      <li><strong>繳費方式：</strong>現金；也可以請邀請你的人代收，再轉交教會</li>
       <li><strong>小孩：</strong>由希望教會補助麥當勞餐點。若要跟大人一樣吃便當，需付 $300 並填單</li>
       <li>請爸爸媽媽事先和小孩溝通，要吃便當還是麥當勞</li>
       <li>小孩如果選麥當勞，只要填寫姓名，不用選便當</li>
@@ -57,7 +56,7 @@ const title = '希望教會中的感恩餐會報名';
     <div id="tg-success" class="hidden bg-hope-green-light border border-hope-green rounded-xl p-6 text-center">
       <div class="text-4xl mb-3">🙏</div>
       <h3 class="text-lg font-bold text-hope-green-dark mb-1">報名成功！</h3>
-      <p class="text-gray-600 text-sm">我們已收到你的報名資料，餐費請以現金繳費，或交給邀請你的人代收。感恩餐會見！</p>
+      <p class="text-gray-600 text-sm">我們已收到你的報名資料，餐費請以現金繳費，或請邀請你的人代收後轉交教會。感恩餐會見！</p>
     </div>
 
     <form id="tg-form" action="https://formspree.io/f/meajkbbq" method="POST" class="space-y-6">
