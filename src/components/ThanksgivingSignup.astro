@@ -18,15 +18,15 @@ const title = '希望教會中的感恩餐會報名';
 <section id="thanksgiving-signup" class="mt-14">
   <!-- 便當菜單 -->
   <div class="mb-12">
-    <h2 class="text-2xl font-bold text-hope-green-dark mb-2 pb-2 border-b-2 border-hope-green-light">🍱 感恩節便當選項</h2>
+    <h2 class="text-2xl font-bold text-hope-green-dark mb-2 pb-2 border-b-2 border-hope-green-light">🍱 特選餐盒選項</h2>
     <p class="text-gray-600 text-sm mb-6">共 8 款，每人選 1 款。報名時直接在下方表單選擇。</p>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
       {meals.map((m) => (
         <div class="rounded-xl overflow-hidden border border-gray-100 bg-white shadow-sm">
           {m.img ? (
-            <img src={m.img} alt={m.name} loading="lazy" class="w-full h-32 md:h-36 object-cover" style="margin:0; border-radius:0; box-shadow:none;" />
+            <img src={m.img} alt={m.name} loading="lazy" class="w-full aspect-square object-cover" style="margin:0; border-radius:0; box-shadow:none;" />
           ) : (
-            <div class="w-full h-32 md:h-36 bg-hope-green-light flex items-center justify-center text-4xl">🍱</div>
+            <div class="w-full aspect-square bg-hope-green-light flex items-center justify-center text-5xl">🍱</div>
           )}
           <p class="px-3 py-2 text-center text-sm font-semibold text-gray-800">{m.name}</p>
         </div>
@@ -122,6 +122,14 @@ const title = '希望教會中的感恩餐會報名';
         送出報名
       </button>
     </form>
+  </div>
+  <!-- 經文放最後 -->
+  <div class="mt-14 text-center">
+    <p class="text-gray-500 text-sm mb-4">最後送你一句我們很喜歡的話</p>
+    <blockquote class="bg-hope-green-light border-l-4 border-hope-green rounded-r-xl px-6 py-5 text-hope-green-dark font-medium leading-relaxed text-left max-w-xl mx-auto">
+      凡事謝恩，因為這是神在基督耶穌裡向你們所定的旨意。
+      <span class="block mt-2 text-sm text-gray-500 font-normal">——帖撒羅尼迦前書 5:18</span>
+    </blockquote>
   </div>
 </section>
 
