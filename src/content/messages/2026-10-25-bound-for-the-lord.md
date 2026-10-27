@@ -4,6 +4,7 @@ date: "2026-10-25"
 description: 真正跟隨主的人，不是被迫失去自由，而是因為深深經歷基督的愛，甘願把生命的主權交給祂。從領受愛到回應愛，從自我中心到生命奉獻，從追求自由到忠心到底。
 scripture: 哥林多後書 5:14–15、羅馬書 12:1–2、以弗所書 4:1
 cover: /images/messages/2026-10-25-bound-for-the-lord.png
+youtube: https://www.youtube.com/watch?v=mv2oTgGW_jI
 ---
 
 > 原來基督的愛激勵我們；因我們想，一人既替眾人死，眾人就都死了；並且他替眾人死，是叫那些活著的人不再為自己活，乃為替他們死而復活的主活。
