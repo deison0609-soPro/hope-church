@@ -11,7 +11,7 @@ youtube: https://www.youtube.com/watch?v=BKmicxG6Sg0
 >
 > **羅馬書 8：26**
 
-**【跟隨神系列 5】**
+**【禱告系列 1】**
 
 **主題經文：**
 
