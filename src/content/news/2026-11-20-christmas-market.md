@@ -11,7 +11,7 @@ cover: /images/news/christmas-2026/dm-square.jpg
 
 爸爸媽媽帶孩子來、阿公阿嬤陪孫子孫女來、在綠園道散步順路經過，都歡迎。不管你有沒有來過教會，來就對了。**免費參加。**
 
-<!-- ILLUSTRATION_1 -->
+<img src="/images/news/christmas-2026/illus-1.jpg" alt="聖誕親子市集示意圖：綠園道上的紅白條紋攤位與逛市集的家庭" style="width:100%; border-radius:1rem; margin:1.5rem 0;" />
 
 **先加入希望教會官方 LINE，當天每人可領一張摸彩券。**
 
@@ -24,7 +24,6 @@ cover: /images/news/christmas-2026/dm-square.jpg
 | 日期 | 2026 年 12 月 13 日（日） |
 | 時間 | 09:30–11:30 |
 | 活動地點 | 工學北路＋德富路 綠園道廣場（戶外，[地圖](https://maps.google.com/maps?q=臺中市南區工學北路德富路綠園道)） |
-| 教會地址 | 希望教會（[臺中市南區工學北路 169 號](https://maps.google.com/maps?q=臺中市南區工學北路169號)） |
 | 主辦 | 大里思恩堂希望教會 |
 | 協辦 | 工學里辦公室 |
 | 費用 | 免費 |
@@ -45,7 +44,7 @@ cover: /images/news/christmas-2026/dm-square.jpg
 
 活動最新消息會在官方 LINE 公告。
 
-<!-- ILLUSTRATION_2 -->
+<img src="/images/news/christmas-2026/illus-2.jpg" alt="聖誕親子市集示意圖：大人小孩在攤位一起玩遊戲" style="width:100%; border-radius:1rem; margin:1.5rem 0;" />
 
 ---
 
